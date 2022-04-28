@@ -1,3 +1,20 @@
+<?php
+
+require_once 'includes/baza.php'; 
+
+$conn = database_connection('localhost', 'root', '', 'furniture');
+
+//QUERY FOR GETTING ALL PRODUCTS
+$products_query = "SELECT * FROM products";
+
+$result = mysqli_query($conn,$products_query);
+
+if (!$result) {
+	die ('Greska u upitu.');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -432,11 +449,24 @@
 			<div class="row">
 				<div id="product" class="owl-carousel owl-theme">
 			<!--1 -->
+
+			<?php
+			
+			if(mysqli_num_rows($result) > 0) {
+
+				while($rows = mysqli_fetch_assoc($result)) {
+
+					$name = $rows['name'];
+					$old_price = $rows['old_price'];
+					$new_price = $rows['new_price'];
+					$picture_path = $rows['picture_path'];
+			?>
+
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
 							<div class="image wow fadeInDown animated">
-								<a href="single-products.html"><img class="wow fadeInDown animated" src="assets/image/category/product-1.jpg" alt="Chairs" title="Chairs" width="100%"></a>
+								<a href="single-products.html"><img class="wow fadeInDown animated" src="<?php echo $picture_path;?>" alt="Chairs" title="Chairs" width="100%"></a>
 								
 								<div class="sale"><span class="">Sale</span></div>
 								<div class="button-group">
@@ -450,7 +480,7 @@
 							<div class="caption">
 								
 								<div class="rate-and-title">
-									<h4 class="wow fadeInDown animated"><a href="single-products.html">Leatherette Office Chair</a></h4>
+									<h4 class="wow fadeInDown animated"><a href="single-products.html"><?php echo $name;?></a></h4>
 									<div class="rating wow fadeInDown animated">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
@@ -460,15 +490,22 @@
 										<div class="clear"></div>
 									</div>
 									<p class="price wow fadeInDown animated">
-										<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
+										<span class="price-old">$<?php echo $old_price;?></span> <span class="price-new">$<?php echo $new_price;?></span>  
 									</p>
 									<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
 								</div>
 							</div>
 						</div>
 					</div>				
-				</div>				
-				<!-- 2-->
+				</div>	
+				
+				<?php
+
+					}
+				}
+
+				?>
+				<!--
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -505,7 +542,7 @@
 						</div>
 					</div>				
 				</div>				
-				<!-- 3-->
+			
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -540,7 +577,7 @@
 						</div>
 					</div>				
 				</div>				
-				<!--4 -->
+				
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -575,7 +612,7 @@
 						</div>
 					</div>	
 				</div>	
-				<!--5 -->	
+					
 					<div class="item">
 						<div class="col-sm-12">
 							<div class="product-thumb">
@@ -610,8 +647,9 @@
 									</div>
 								</div>
 							</div>
-						</div>				
-					</div>			
+						</div>		
+					</div>		
+					-->			
 				<!-- products end -->
 				</div>
 			</div>
