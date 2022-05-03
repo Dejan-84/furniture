@@ -498,168 +498,17 @@ if (!$result) {
 						</div>
 					</div>				
 				</div>	
-				
 				<?php
 
 					}
 				}
 
 				?>
-				<!--
-				<div class="item">
-					<div class="col-sm-12">
-						<div class="product-thumb">
-							<div class="image wow fadeInDown animated">
-								<a href="single-products.html"><img class="wow fadeInDown animated" src="assets/image/category/product-2.jpg" alt="Chairs" title="Chairs" width="100%"></a>
-								
-								<div class="sale"><span class="">Sale</span></div>
-								<div class="button-group">
-									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview"><span>Quick View</span></button>
-										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
-										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
-									</div>
-								</div>
-							</div>
-							<div class="caption">
-								
-								<div class="rate-and-title">
-									<h4 class="wow fadeInDown animated"><a href="single-products.html">Regentseating Chair</a></h4>
-									<div class="rating wow fadeInDown animated">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o"></i>
-										<i class="fa fa-star-o"></i>
-										<i class="fa fa-star-o"></i>
-										<div class="clear"></div>
-									</div>
-									<p class="price wow fadeInDown animated">
-										<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-									</p>
-									<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-								</div>
-							</div>
-						</div>
-					</div>				
-				</div>				
-			
-				<div class="item">
-					<div class="col-sm-12">
-						<div class="product-thumb">
-							<div class="image wow fadeInDown animated">
-								<a href="single-products.html"><img class="wow fadeInDown animated" src="assets/image/category/product-3.jpg" alt="Chairs" title="Chairs" width="100%"></a>
-								<div class="button-group">
-									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview"><span>Quick View</span></button>
-										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
-										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
-									</div>
-								</div>
-							</div>
-							<div class="caption">
-								
-								<div class="rate-and-title">
-									<h4 class="wow fadeInDown animated"><a href="single-products.html">Muren Durable Table</a></h4>
-									<div class="rating wow fadeInDown animated">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o"></i>
-										<i class="fa fa-star-o"></i>
-										<i class="fa fa-star-o"></i>
-										<div class="clear"></div>
-									</div>
-									<p class="price wow fadeInDown animated">
-										<span class="price-new">$50.00</span>  
-									</p>
-									<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-								</div>
-							</div>
-						</div>
-					</div>				
-				</div>				
 				
-				<div class="item">
-					<div class="col-sm-12">
-						<div class="product-thumb">
-							<div class="image wow fadeInDown animated">
-								<a href="single-products.html"><img class="wow fadeInDown animated" src="assets/image/category/product-4.jpg" alt="Chairs" title="Chairs" width="100%"></a>
-								<div class="button-group">
-									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview"><span>Quick View</span></button>
-										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
-										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
-									</div>
-								</div>
-							</div>
-							<div class="caption">
-								
-								<div class="rate-and-title">
-									<h4 class="wow fadeInDown animated"><a href="single-products.html">Solid Wood  Table</a></h4>
-									<div class="rating wow fadeInDown animated">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o"></i>
-										<i class="fa fa-star-o"></i>
-										<i class="fa fa-star-o"></i>
-										<div class="clear"></div>
-									</div>
-									<p class="price wow fadeInDown animated">
-										<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-									</p>
-									<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-								</div>
-							</div>
-						</div>
-					</div>	
-				</div>	
-					
-					<div class="item">
-						<div class="col-sm-12">
-							<div class="product-thumb">
-								<div class="image wow fadeInDown animated">
-									<a href="single-products.html"><img class="wow fadeInDown animated" src="assets/image/category/product-5.jpg" alt="Chairs" title="Chairs" width="100%"></a>
-									
-									<div class="sale"><span class="">Sale</span></div>
-									<div class="button-group">
-										<div class="inner">
-											<button type="button" title="Quick View" class="button-quickview"><span>Quick View</span></button>
-											<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
-											<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="caption">
-									
-									<div class="rate-and-title">
-										<h4 class="wow fadeInDown animated"><a href="single-products.html">Ladder Roswell Table</a></h4>
-										<div class="rating wow fadeInDown animated">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											<i class="fa fa-star-o"></i>
-											<div class="clear"></div>
-										</div>
-										<p class="price wow fadeInDown animated">
-											<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-										</p>
-										<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-									</div>
-								</div>
-							</div>
-						</div>		
-					</div>		
-					-->			
-				<!-- products end -->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+				
 <!-- Products End-->
 
-
-<!-- Our Astrologers Work for You -->
+<!-- Our Astrologers Work for You 
 <div id="website_visitors" class="astrologers-work">
 	<div class="container-fluid">
 		<div class="row">
@@ -675,7 +524,7 @@ if (!$result) {
 		</div>
 	</div>
 </div>
-<!-- Our products  -->
+<!-- Our products  
 	<div id="products" class="products_section">
 		<div class="container-fluid">
 			<div class="heading_wrapper wow fadeInDown animated">
@@ -684,7 +533,7 @@ if (!$result) {
 			</div>
 			<div class="row">
 				<div id="new_category" class="owl-carousel owl-theme">
-			<!--1 -->
+			<!--1 
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -721,7 +570,7 @@ if (!$result) {
 						</div>
 					</div>				
 				</div>				
-				<!-- 2-->
+				<!-- 2-
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -758,7 +607,7 @@ if (!$result) {
 						</div>
 					</div>				
 				</div>				
-				<!-- 3-->
+				<!-- 3
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -793,7 +642,7 @@ if (!$result) {
 						</div>
 					</div>				
 				</div>				
-				<!--4 -->
+				<!--4 
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
@@ -828,7 +677,7 @@ if (!$result) {
 						</div>
 					</div>	
 				</div>	
-				<!--5 -->	
+				<!--5 
 					<div class="item">
 						<div class="col-sm-12">
 							<div class="product-thumb">
@@ -864,7 +713,8 @@ if (!$result) {
 								</div>
 							</div>
 						</div>				
-					</div>			
+					</div>
+			     	-->			
 				<!-- products end -->
 				</div>
 			</div>
@@ -1190,7 +1040,7 @@ if (!$result) {
 	
 	<div class="footer_copyright">
 		<div class="container-fluid">
-			<p class="wow fadeInDown animated">© Copyright 2020 by Furniture Store. All right Reserved - Design By <a href="https://www.templatebazaar.in/" target="_blank">Template bazaar</a></p>
+			<p class="wow fadeInDown animated">© Copyright 2022 by Furniture Store. All right Reserved - Design By <a href="https://www.facebook.com/dejan.djurdjev.1/" target="_blank">Dejan Đurđev</a></p>
 		</div>
 	</div>
 
