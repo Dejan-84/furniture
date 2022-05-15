@@ -456,6 +456,7 @@ if (!$result) {
 
 				while($rows = mysqli_fetch_assoc($result)) {
 
+					$id = $rows['product_id'];
 					$name = $rows['name'];
 					$old_price = $rows['old_price'];
 					$new_price = $rows['new_price'];
@@ -471,7 +472,7 @@ if (!$result) {
 								<div class="sale"><span class="">Sale</span></div>
 								<div class="button-group">
 									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview"><span>Quick View</span></button>
+										<button type="button" title="Quick View" class="button-quickview" data-id="<?php echo $id; ?>" onclick="window.location.href='product_details.php?id= <?php echo $id; ?>'"><span>Quick View</span></button>
 										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
 										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
 									</div>
@@ -1127,6 +1128,7 @@ $(document).ready(function(){
 	
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/products.js"></script>
 	
 <!-- script files -->
 </body>
