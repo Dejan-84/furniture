@@ -5,6 +5,8 @@ if(isset($_GET['id'])){
 
     require_once 'includes/baza.php';  
 
+    $provera = true;
+
     $id = $_GET['id'];
 
     $conn = database_connection('localhost', 'root', '', 'furniture');
