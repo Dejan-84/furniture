@@ -1499,6 +1499,9 @@ html body .owl-carousel {
 	box-shadow: hsl(0, 0%, 94%) 0 0 15px;
 	width: 100%;
 }
+.event{
+    padding:10px;
+}
 
 #zodiac_Sign.rashi_wrapper .rashi_sign_box  h4 {
     font-size: 16px;
@@ -3500,3 +3503,9 @@ em.required
 	margin: auto;
 }
 /* product grid  */
+
+
+/*CUSTOM CSS*/
+.margin {
+    margin:20px 10px;
+}
