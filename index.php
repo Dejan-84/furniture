@@ -472,7 +472,7 @@ if (!$result) {
 								<div class="sale"><span class="">Sale</span></div>
 								<div class="button-group">
 									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview" data-id="<?php echo $id; ?>" onclick="window.location.href='product_details.php?id= <?php echo $id; ?>'"><span>Quick View</span></button>
+										<button type="button" title="Quick View" class="button-quickview" data-id="<?php echo $id; ?>" onclick="window.location.href='product_detail.php?id= <?php echo $id; ?>'"><span>Quick View</span></button>
 										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
 										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
 									</div>
