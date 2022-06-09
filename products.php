@@ -1,20 +1,41 @@
+<?php
+
+require_once 'includes/baza.php'; 
+
+$conn = database_connection('localhost', 'root', '', 'furniture');
+
+//QUERY FOR GETTING COLORS
+
+$query1 = "SELECT DISTINCT color FROM products";
+
+$result1 = mysqli_query($conn, $query1);
+
+if (!$result1) {
+	echo 'Greska u upitu.';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Furniture Store | login</title>
+	<title>Furniture Store | product</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="assets/vendor/owl.carousel/assets/owl.carousel.css"> 
-	<link rel="stylesheet" href="assets/vendor/wow/animate.css"> 
+	<link rel="stylesheet" href="assets/vendor/wow/animate.css">
+	<link rel="stylesheet" href="assets/js/products.js">
+	
 
 	<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="assets/vendor/jquery/jquery.min.js"></script>
 	<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 	<script src="assets/vendor/wow/wow.min.js"></script>
+	
+	
 	<script>
 	new WOW().init();
 	  wow = new WOW(
@@ -69,7 +90,7 @@
 				<div class="row">
 					<div class="furniture-responsive-menu">
 						<div class="logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 						</div>
@@ -99,12 +120,12 @@
 									
 									<ul class="accordion" id="accordion-category">
 										<li class="panel mobile_menu_li">
-											<a href="index.html" class="mar-mobile"></i> Home</a>
+											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
 										<li class="panel mobile_menu_li">
 											<a href="about_us.html" class="mar-mobile"></i> about us</a>
 										</li>
-										  	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
+										  <!--	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
 												<div id="category84" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 										<ul >
@@ -120,7 +141,7 @@
                                                         <li><a href="products.html">Office Table</a></li>
                                                     </ul>
                                                 </div>
-                                            </div><!-- end col-3 -->
+                                            </div><!-- end col-3 
                                             <div class="col-menu col-md-3">
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
@@ -132,7 +153,7 @@
                                                         <li><a href="products.html">Office Table</a></li>
                                                     </ul>
                                                 </div>
-                                            </div><!-- end col-3 -->
+                                            </div><!-- end col-3 
                                             <div class="col-menu col-md-3">
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
@@ -156,9 +177,9 @@
                                                         <li><a href="products.html">Office Table</a></li>
                                                     </ul>
                                                 </div>
-                                            </div><!-- end col-3 -->
-                                        </div><!-- end row -->
-                                    </li>
+                                            </div><!-- end col-3 
+                                        </div><!-- end row 
+                                    </li>--> 
                                 </li>
                               </ul>
                           </div>
@@ -250,74 +271,17 @@
 				<div class="row">
 					<div class="header_menu_wrapper">
 						<nav class="navbar navbar-expand-md navbar-light">
-							<a class="navbar-brand" href="index.html">
+							<a class="navbar-brand" href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 
 							<div class="collapse navbar-collapse mean-menu" style="display: block;">
 								<ul class="navbar-nav">
-									<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+									<li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
 									
 									<li class="nav-item"><a href="about_us.html" class="nav-link">About Us</a></li>
 
-									
-									
-									<li class="nav-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Megamenu">Shop<i class="fa fa-angle-down"></i></a>
-										<ul class="dropdown-menu megamenu megamenu-pdd animated">
-											<li><div class="row">
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Tables</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Chair</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Wardrobe</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Best Selling</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                        </div><!-- end row -->
-                                    </li></li>
-
-										</ul>
-									</li> 
+									 
 									<li class="nav-item"><a href="#" class="nav-link">Pages <i class="fa fa-angle-down"></i></a>
 										<ul class="dropdown-menu">
 
@@ -396,52 +360,253 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="breadcrumb-content">
-				<h2>login</h2>
+				<h2>products</h2>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="">login</a></li>
+					<li><a href="">products</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </section>
-<div id="content" class="cart_page checkout_page register_page login_page">
-<!-- cart -->
-	<div id="register" class="cart_section checkout_section register_section">
-		<div class="container-fluid" id="checkout">
-				
-			<div class="row billing_and_payment_option wow fadeInDown   animated">
-				<div class="heading_wrapper wow fadeInDown animated">
-					<h2 class="wow fadeInDown animated">Login your Account</h2>
-					<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
-				</div>
-				<!-- Billing Address -->
-				<div class="login_box">
-					<h3>Create Your Account</h3>
-						<form class="eb-form eb-mailform form-checkout" novalidate="novalidate">
-							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-email-1" type="email" name="email" data-constraints="@Email @Required" placeholder="E-Mail">
-							</div>
-							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-city-1" type="text" name="password" data-constraints="@Required" placeholder="Password:">
-							</div>
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-								<label class="custom-control-label register-remember" for="defaultUnchecked">Remember me on this device</label>
-                            </div>
-							<button type="submit" class="btn ">Register</button>
-							
-							<p class="signInclass"> Dont Have an Account?  &nbsp;<a href="login.html">Sign In</a> </p>
+<div id="content" class="products_page">
+<!-- products -->
+	<div id="products" class="products_section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3">
+					<div>
+						<div>
+							<h3>Price Range</h3>
+						</div>
 						
-					</form>
-					<div class="clear"></div>
+						<input type="range" value="10" min="10" max="1000" oninput="this.nextElementSibling.value = this.value">
+						<output>20</output>
+
+						
+
+					</div>
+					<div class="eb_right">
+						<!-- category -->
+						<div id="category" class="category">
+							<h3 class="wow fadeInDown animated">category</h3>
+							 
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+								<label class="form-check-label" for="flexRadioDefault1">
+									Chairs
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+								<label class="form-check-label" for="flexRadioDefault2">
+									Tables
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+								<label class="form-check-label" for="flexRadioDefault3">
+									Beds
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+								<label class="form-check-label" for="flexRadioDefault4">
+									Sofas
+								</label>
+							</div>
+
+						</div>
+						<!-- category end-->
+						
+						<!-- category product -->
+						<div id="category_product" class="category_product">
+							<h3 class="wow fadeInDown animated">Select Color </h3>
+
+							<select class="form-select col-sm-12" aria-label="Default select example">
+								<option selected>Select color...</option>
+								<?php
+									if(mysqli_num_rows($result1) > 0) {
+
+										while($rows = mysqli_fetch_assoc($result1)) {
+							
+											$id = $rows['product_id'];
+									
+											$color = $rows['color'];
+
+							
+											echo '<option value="">'.$color.'</option>';
+											
+										}
+									}
+										
+								?>
+							</select>
+
+							<!--	<div class="">
+									<div class="product-thumb">
+									<div class="image wow fadeInDown animated">
+										<a href=""><img class="wow fadeInDown animated" src="assets/image/products/product-1.jpg" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
+										<div class="sale"><span class="">Sale</span></div>
+									</div>
+									<div class="caption ">
+										
+										<div class="rate-and-title">
+											<h4 class="wow fadeInDown animated"><a href="">Natural  Furniture</a></h4>
+											<div class="rating wow fadeInDown animated">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<div class="clear"></div>
+											</div>
+											<p class="price wow fadeInDown animated">
+												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
+											</p>
+											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<!-- products category end
+								<div class="">
+									<div class="product-thumb">
+									<div class="image wow fadeInDown animated">
+										<a href=""><img class="wow fadeInDown animated" src="assets/image/products/product-7.jpg" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
+										<div class="sale"><span class="">Sale</span></div>
+									</div>
+									<div class="caption ">
+										
+										<div class="rate-and-title">
+											<h4 class="wow fadeInDown animated"><a href="">Natural Agate</a></h4>
+											<div class="rating wow fadeInDown animated">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<div class="clear"></div>
+											</div>
+											<p class="price wow fadeInDown animated">
+												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
+											</p>
+											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<!-- products category end
+							<div class="">
+								<div class="product-thumb">
+									<div class="image wow fadeInDown animated">
+										<a href=""><img class="wow fadeInDown animated" src="assets/image/products/product-1.jpg" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
+										<div class="sale"><span class="">Sale</span></div>
+									</div>
+									<div class="caption ">
+										
+										<div class="rate-and-title">
+											<h4 class="wow fadeInDown animated"><a href="">Titanium Quartz</a></h4>
+											<div class="rating wow fadeInDown animated">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<i class="fa fa-star-o"></i>
+												<div class="clear"></div>
+											</div>
+											<p class="price wow fadeInDown animated">
+												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
+											</p>
+											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<!-- products category end
+								-->
+						</div>
+						<!-- products category end-->
+						
+					</div>
 				</div>
-				<!-- Delivery Address  -->
-			</div>
-			<!-- your shopping cart -->
+				
+				<div class="col-sm-9">
+					<div class="eb_left">
+					<!-- product-list-top -->
+						<div class="product-list-top">
+							<div class="sort-by-wrapper">
+								  <div class="col-md-6 col-xs-6 sort">
+										<div class="form-group input-group input-group-sm wow fadeInDown pull-left">
+											<label class="input-group-addon" for="input-sort">Sort By:</label>
+											<div class="select-wrapper">
+												<select id="input-sort" class="form-control">
+													<option value="" selected="selected">Default</option>
+													<option value="">Name (A - Z)</option>	
+													<option value="">Name (Z - A)</option>
+													<option value="">Price (Low &gt; High)</option>
+													<option value="">Price (High &gt; Low)</option>
+													<option value="">Rating (Highest)</option>
+													<option value="">Rating (Lowest)</option>
+													<option value="">Model (A - Z)</option>
+													<option value="">Model (Z - A)</option>
+												</select>
+											</div>
+										</div>
+								  </div>
+							</div>
+
+							<div class="show-wrapper">
+								<div class="col-md-6 col-xs-6">
+									<div class="form-group input-group input-group-sm wow fadeInDown pull-right">
+										<label class="input-group-addon" for="input-limit">Show:</label>
+										<div class="select-wrapper">
+											<select id="input-limit" class="form-control" onchange="location = this.value;">
+												<option value="" selected="selected">9</option>
+												<option value="">12</option>
+												<option value="">15</option>
+												<option value="">18</option>
+																				  
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					<!-- product-list-top -->
+			<!--1 -->
+					<div class="pomocni-div"></div>
+
+					<div class="pagination">
+
+
+					</div>			
+		
+					<!-- products end 
+							
+					 Pagination -->
+					<!--	
+								<div class="pagination-section text-center wow fadeInDown animated">
+									<a href="#" class="prev page-numbers"><i class="fa fa-angle-left"></i></a>
+									<span class="page-numbers current" aria-current="page">1</span>
+									<a href="#" class="page-numbers">2</a>
+									<a href="#" class="page-numbers">3</a>
+									<a href="#" class="page-numbers">4</a>
+									<a href="#" class="page-numbers">5</a>
+									<a href="#" class="next page-numbers"><i class="fa fa-angle-right"></i></a>
+								</div> -->
+						<!-- Pagination End-->
+					</div>	
+				</div>
+				
+			</div>	
 		</div>	
 	</div>	
-<!-- cart end-->	
+	
 </div>
 <!-- Footer Section -->
 	<!-- Footer Section -->
@@ -555,5 +720,86 @@
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
 <!-- script files -->
+
+<script>
+	$(document).ready(function() {
+
+		var stranica = 1;
+
+		$('.previous').attr('disabled', true);
+        
+        //INICIJALIZOVANJE OBJEKTA SA FILTERIMA
+        var objekat_filteri = {};
+
+		function ucitaj_filtrirane_podatke(stranica, filteri)  
+        {  
+
+            //SLANJE AJAX POZIVA U FAJL ZA GENERISANJE FILTRIRANIH PODATAKA SA PAGINACIJOM
+            $.ajax({  
+
+                url:"ajax/refresh_products.php",  
+                method:"POST",
+                dataType: 'json',  
+                data:{stranica,filteri},  
+
+                success:function(data){  
+                    console.log(data);
+
+
+					//UPIS PODATAKA U GLAVNI DIV STRANICE
+					$('.pagination').html(data.html); 
+
+
+					$('html, body').animate({
+
+						scrollTop: $(".pomocni-div").offset().top
+					}, 2000);
+
+					/*
+                    //AKO NEMA REZULTATA PRETRAGE,OBAVESTI KORISNIKA I REFRESH-UJ STRANICU
+                    if (data.greska) {
+
+                        alert(data.greska);
+                        location.reload(); 
+                    }
+                    //AKO IMA REZULTATA ZA ZADATU PRETRAGU
+                    else {
+
+                        //UPIS PODATAKA U GLAVNI DIV STRANICE
+                        $('.podaci').html(data.html); 
+                    }
+					*/
+                }  
+            });  
+        }
+
+		ucitaj_filtrirane_podatke(stranica, objekat_filteri);
+
+
+		//FUNKCIJA NA KLIK LINKA ZA PAGINACIJU
+		$(document).on('click', '.pagination_link', function(){ 
+			
+			if (stranica != 1) {
+				$('.previous').attr('disabled', false);
+			}
+			
+			if ($(this).attr('data-name')) {
+
+				var action = $(this).attr('data-name');
+				
+				(action == "previous") ? (stranica--) : (stranica++);
+				
+			}
+			else {
+				//UZIMANJE BROJA STRANICE
+				stranica = $(this).attr('id'); 
+			}
+
+			//POZIVANJE FUNKCIJE ZA UCITAVANJE PODATAKA,SETOVANJE STRANICE NA BROJ KLIKNUTOG LINKA I PROSLEDJIVANJE VRSTE I VREDNOSTI FILTERA
+			ucitaj_filtrirane_podatke(stranica, objekat_filteri);  
+		});
+
+	})
+</script>
 </body>
 </html>

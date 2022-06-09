@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
     
     <div class="container margin">
 
-        <a href="index.php" class="btn btn-primary">Back to Homepage</a>
+        <a href="index.php" class="btn btn-primary">Back</a>
     </div>
     <div class="container">
         <div class="col-md-6">
