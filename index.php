@@ -1,4 +1,19 @@
 <?php
+session_start();
+
+//print_r($_SESSION);
+
+//create a key for hash_hmac function
+if (empty($_SESSION['key'])) {
+
+    $_SESSION['key'] = bin2hex(random_bytes(32));
+}
+    
+//create CSRF token
+$csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
+
+
+
 
 require_once 'includes/baza.php'; 
 
@@ -74,10 +89,32 @@ if (!$result) {
 						</ul>
 				   </div>
 				
-				<div class="col-lg-4 col-md-12">
+				<div class="col-md-4 col-md-12">
 					<ul class="top-header-social header_account">
-						<li><a href="login.html"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
-						<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li>
+						<?php
+
+							//IF USER IS LOGGED IN,HIDE LOGIN AND REGISTER LINK
+							if(!isset($_SESSION['logged_in'])) {
+
+								echo '<li class="nav-item active">
+										<a class="nav-link" href="login.php"><i class="fa fa-sign-in"></i>Login <span>/</span></a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="register.php"><i class="fa fa-pencil-square-o"></i>Register</a>
+									</li>';
+
+							}
+                            //IF USER IS LOGGED IN ,SHOW WELLCOME MEASSAGE AND LOGOUT LINK
+							if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+				
+						
+								echo '<span style="color:white;">Wellcome ' .$_SESSION['ime'].' ' .$_SESSION['prezime'] ;
+							
+							    echo ' <a  style="color:white;" href="logout.php?csrf=' .$csrf. '"><i class="fa fa-sign-out"></i>Logout</a></span>';
+							}
+						?>	
+						<!--<li><a href="login.php"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
+						<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li> -->
 					</ul>
 				</div>
 
@@ -128,6 +165,7 @@ if (!$result) {
 										<li class="panel mobile_menu_li">
 											<a href="about_us.html" class="mar-mobile"></i> about us</a>
 										</li>
+										
 										  	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
 												<div id="category84" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
@@ -280,13 +318,15 @@ if (!$result) {
 
 							<div class="collapse navbar-collapse mean-menu" style="display: block;">
 								<ul class="navbar-nav">
-									<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+									<li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
 									
 									<li class="nav-item"><a href="about_us.html" class="nav-link">About Us</a></li>
 
+									<li class="nav-item"><a href="products.php" class="nav-link">Products</a></li>
+
 									
 									
-									<li class="nav-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Megamenu">Shop<i class="fa fa-angle-down"></i></a>
+									<!-- <li class="nav-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Megamenu">Shop<i class="fa fa-angle-down"></i></a>
 										<ul class="dropdown-menu megamenu megamenu-pdd animated">
 											<li><div class="row">
                                             <div class="col-menu col-md-3">
@@ -300,7 +340,7 @@ if (!$result) {
                                                         <li><a href="products.html">Office Table</a></li>
                                                     </ul>
                                                 </div>
-                                            </div><!-- end col-3 -->
+                                            </div><!-- end col-3 
                                             <div class="col-menu col-md-3">
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
@@ -312,7 +352,7 @@ if (!$result) {
                                                         <li><a href="products.html">Office Table</a></li>
                                                     </ul>
                                                 </div>
-                                            </div><!-- end col-3 -->
+                                            </div><!-- end col-3 
                                             <div class="col-menu col-md-3">
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
@@ -336,18 +376,18 @@ if (!$result) {
                                                         <li><a href="products.html">Office Table</a></li>
                                                     </ul>
                                                 </div>
-                                            </div><!-- end col-3 -->
-                                        </div><!-- end row -->
+                                            </div><!-- end col-3 
+                                        </div><!-- end row 
                                     </li></li>
 
-										</ul>
+										</ul>-->
 									</li> 
 									<li class="nav-item"><a href="#" class="nav-link">Pages <i class="fa fa-angle-down"></i></a>
 										<ul class="dropdown-menu">
 
 											<li class="nav-item"><a href="#" class="nav-link">Shop <i class="fa fa-angle-right"></i></a>
 												<ul class="dropdown-menu">
-													<li class="nav-item"><a href="products.html" class="nav-link">Products List</a></li>
+													<li class="nav-item"><a href="products.php" class="nav-link">Products List</a></li>
 
 													<li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
 
@@ -472,7 +512,7 @@ if (!$result) {
 								<div class="sale"><span class="">Sale</span></div>
 								<div class="button-group">
 									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview" data-id="<?php echo $id; ?>" onclick="window.location.href='product_detail.php?id= <?php echo $id; ?>'"><span>Quick View</span></button>
+										<button type="button" title="Quick View" class="button-quickview" data-id="<?php echo $id; ?>" onclick="window.location.href='product_detail.php?id=<?php echo $id;?>'"><span>Quick View</span></button>
 										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
 										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
 									</div>
