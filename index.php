@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 //print_r($_SESSION);
@@ -104,17 +108,16 @@ if (!$result) {
 									</li>';
 
 							}
-                            //IF USER IS LOGGED IN ,SHOW WELLCOME MEASSAGE AND LOGOUT LINK
+                            //IF USER IS LOGGED IN ,SHOW WELCOME MEASSAGE AND LOGOUT LINK
 							if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 				
 						
-								echo '<span style="color:white;">Wellcome ' .$_SESSION['ime'].' ' .$_SESSION['prezime'] ;
+								echo '<span style="color:white;">Welcome ' .$_SESSION['ime'].' ' .$_SESSION['prezime'] ;
 							
-							    echo ' <a  style="color:white;" href="logout.php?csrf=' .$csrf. '"><i class="fa fa-sign-out"></i>Logout</a></span>';
+							    echo '&nbsp; <a  style="color:white;" href="logout.php?csrf=' .$csrf. '"><i class="fa fa-sign-out"></i>Logout</a></span>';
 							}
 						?>	
-						<!--<li><a href="login.php"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
-						<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li> -->
+					
 					</ul>
 				</div>
 
@@ -130,7 +133,7 @@ if (!$result) {
 				<div class="row">
 					<div class="furniture-responsive-menu">
 						<div class="logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 						</div>
@@ -160,7 +163,7 @@ if (!$result) {
 									
 									<ul class="accordion" id="accordion-category">
 										<li class="panel mobile_menu_li">
-											<a href="index.html" class="mar-mobile"></i> Home</a>
+											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
 										<li class="panel mobile_menu_li">
 											<a href="about_us.html" class="mar-mobile"></i> about us</a>
@@ -281,10 +284,10 @@ if (!$result) {
 												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="login.html"> Login </a>
+															 <a href="login.php"> Login </a>
 														</li>
 														<li>
-															 <a href="register.html"> Register</a>
+															 <a href="register.php"> Register</a>
 														</li>
 													</ul>
 												</div>
@@ -312,7 +315,7 @@ if (!$result) {
 				<div class="row">
 					<div class="header_menu_wrapper">
 						<nav class="navbar navbar-expand-md navbar-light">
-							<a class="navbar-brand" href="index.html">
+							<a class="navbar-brand" href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 
@@ -1049,11 +1052,11 @@ if (!$result) {
 					<div class="footer_list_wrapper">
 						<h2 class="wow fadeInDown animated">Quic Menu</h2>
 						   <ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="index.html">About Us</a></li>
-								<li><a href="index.html">Shop</a></li>
-								<li><a href="index.html">Blog</a></li>
-								<li><a href="index.html">Contact</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="index.php">About Us</a></li>
+								<li><a href="index.php">Shop</a></li>
+								<li><a href="index.php">Blog</a></li>
+								<li><a href="index.php">Contact</a></li>
 								
 							</ul>
 					</div>
