@@ -78,8 +78,8 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 				
 				<div class="col-lg-4 col-md-12">
 					<ul class="top-header-social header_account">
-						<li><a href="login.html"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
-						<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li>
+						<li><a href="login.php"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
+						<li><a href="register.php"><i class="fa fa-pencil-square-o"></i> Register</a></li>
 					</ul>
 				</div>
 
@@ -95,7 +95,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 				<div class="row">
 					<div class="furniture-responsive-menu">
 						<div class="logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 						</div>
@@ -125,7 +125,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 									
 									<ul class="accordion" id="accordion-category">
 										<li class="panel mobile_menu_li">
-											<a href="index.html" class="mar-mobile"></i> Home</a>
+											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
 										<li class="panel mobile_menu_li">
 											<a href="about_us.html" class="mar-mobile"></i> about us</a>
@@ -245,10 +245,10 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="login.html"> Login </a>
+															 <a href="login.php"> Login </a>
 														</li>
 														<li>
-															 <a href="register.html"> Register</a>
+															 <a href="register.php"> Register</a>
 														</li>
 													</ul>
 												</div>
@@ -276,13 +276,13 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 				<div class="row">
 					<div class="header_menu_wrapper">
 						<nav class="navbar navbar-expand-md navbar-light">
-							<a class="navbar-brand" href="index.html">
+							<a class="navbar-brand" href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 
 							<div class="collapse navbar-collapse mean-menu" style="display: block;">
 								<ul class="navbar-nav">
-									<li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+									<li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
 									
 									<li class="nav-item"><a href="about_us.html" class="nav-link">About Us</a></li>
 
@@ -349,7 +349,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 
 											<li class="nav-item"><a href="#" class="nav-link">Shop <i class="fa fa-angle-right"></i></a>
 												<ul class="dropdown-menu">
-													<li class="nav-item"><a href="products.html" class="nav-link">Products List</a></li>
+													<li class="nav-item"><a href="products.php" class="nav-link">Products List</a></li>
 
 													<li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
 
@@ -537,11 +537,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 					<div class="footer_list_wrapper">
 						<h2 class="wow fadeInDown animated">Quic Menu</h2>
 						   <ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="index.html">About Us</a></li>
-								<li><a href="index.html">Shop</a></li>
-								<li><a href="index.html">Blog</a></li>
-								<li><a href="index.html">Contact</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="index.php">About Us</a></li>
+								<li><a href="index.php">Shop</a></li>
+								<li><a href="index.php">Blog</a></li>
+								<li><a href="index.php">Contact</a></li>
 								
 							</ul>
 					</div>
@@ -582,48 +582,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 <!-- script files -->
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
-	<script>
-
-		$(document).ready(function() {
-
-			$(document).on('submit', '#submit-form', function(event) {
-				event.preventDefault();
-
-				var csrf = $('meta[name="csrf"]').attr('content');
-
-				var form = $(this).serialize();
-				 
-				$.ajax({
-
-					url: 'ajax/login_korisnika.php',
-					method: 'post',
-					dataType: 'json',
-					data: {form, csrf},
-
-					success: function(response) {
-
-						console.log(response);
-
-						if(response.status) {
-
-							window.location.href = response.redirect_url;
-						}
-						else{
-
-							$('.text-danger').html(response.message);
-						}
-					}
-
-				});
-
-			
-				
-			});
-		});
-	</script>
-
-
-
+	<script src="assets/js/login.js"></script>
 <!-- script files -->
 </body>
 </html>

@@ -6,13 +6,9 @@ if (isset($_POST)) {
 
     $conn = database_connection('localhost', 'root', '', 'furniture');
 
-
-    //POSTAVLJANJE LIMITA ZA BROJ PROIZVODA PO STRANICI
-    $proizvodi_po_stranici = 6;  
-
     //KREIRANJE PROMENJIVIH ZA BROJ STRANICE I HTML OUTPUT
     $stranica = '';  
-    $html = '';  
+    $html = ''; 
 
     //AKO JE KLIKNUTO NA ODREDJENU STRANICU,SETUJ PROMENJIVU NA TU VREDNOST.U SUPROTNOM SETUJ NA 1.
     if (isset($_POST['stranica'])) {  
@@ -22,6 +18,16 @@ if (isset($_POST)) {
     } else { 
 
         $stranica = 1;  
+    } 
+
+    //POSTAVLJANJE LIMITA ZA BROJ PROIZVODA PO STRANICI
+    if (isset($_POST['broj_proizvoda'])) {  
+
+        $proizvodi_po_stranici = $_POST['broj_proizvoda'];
+
+    } else { 
+
+        $proizvodi_po_stranici = 6;  
     } 
 
     //SETOVANJE OD KOJEG ZAPISA IZ BAZE POCINJE PRIKAZ NA STRANICI
@@ -38,6 +44,30 @@ if (isset($_POST)) {
 
     //QUERY FOR GETTING ALL PRODUCTS
     $products_query = "SELECT * FROM products ";
+
+
+    //AKO POSTOJI FILTER ZA PRETRAGU PO KATEGORIJI
+    if (isset($_POST['filteri']['category']) && $_POST['filteri']['category'] != 'all') {
+
+        $kategorija = $_POST['filteri']['category'];
+
+        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
+        $products_query .= "WHERE category = '$kategorija' ";
+
+        
+    }
+
+
+    //AKO POSTOJI FILTER ZA PRETRAGU PO BOJI
+    if (isset($_POST['filteri']['color']) && $_POST['filteri']['color'] != 'select') {
+
+        $color = $_POST['filteri']['color'];
+
+
+        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
+        $products_query .= "AND color = '$color' ";
+    } 
+
 
 
     //ZAVRSETAK UPITA ZA DOBIJANJE PODATAKA O PROIZVODIMA
@@ -99,10 +129,35 @@ if (isset($_POST)) {
                             </div>';
         }  
     }
+    else{
+        $html .='<div class="poruka">'.'No Results Found.'.'</div>';
+    }
      
     //IZVRSAVANJE UPITA ZA PAGINACIJU
-    $pr_query = "SELECT * FROM products";
+    $pr_query = "SELECT * FROM products ";
 
+    //AKO POSTOJI FILTER ZA PRETRAGU PO KATEGORIJI
+    if (isset($_POST['filteri']['category']) && $_POST['filteri']['category'] != 'all') {
+
+        $kategorija = $_POST['filteri']['category'];
+
+        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
+        $pr_query .= "WHERE category = '$kategorija' ";
+
+       
+    }
+
+    //AKO POSTOJI FILTER ZA PRETRAGU PO BOJI
+    if (isset($_POST['filteri']['color']) && $_POST['filteri']['color'] != 'select') {
+
+        $color = $_POST['filteri']['color'];
+
+
+        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
+        $pr_query .= "AND color = '$color' ";
+    }
+
+  
     $result1 = mysqli_query($conn,$pr_query); 
 
     //DOBIJANJE BROJA REDOVA I BROJA STRANICA,NA OSNOVU REZULTATA IZ BAZE
@@ -110,6 +165,11 @@ if (isset($_POST)) {
     $broj_stranica = ceil($broj_redova / $proizvodi_po_stranici); 
 
     $ukupno = '';
+
+    if($stranica > 1){
+
+        $ukupno .= "<span class='pagination_link' id='" .$prethodna_stranica. "'>Previous</span>"; 
+    }
 
     //DOK IMA STRANICA,GENERISI PAGINATION LINKOVE ZA NJIH
     for($i = 1; $i <= $broj_stranica; $i++) { 
@@ -126,13 +186,16 @@ if (isset($_POST)) {
         }
 
     }
+
+    if($i - 1 > $stranica) {
+
+        $ukupno .= "<span class='pagination_link' id='" .$sledeca_stranica. "'>Next</span>"; 
+    }
     
     $html .='
-        <div class="text-center">
+        <div class="col-sm-12 text-center">
             <ul class="pagination">
-                <li class="page-item"><span class="pagination_link previous" data-name="previous">Previous</span></li>
                 <li class="page-item">'.$ukupno.'</li> 
-                <li class="page-item"><span class="pagination_link next" data-name="next">Next</span></li>
             </ul>
         </div>';
     //ZATVARANJE DIVA ZA PAGINACIJU

@@ -1,14 +1,35 @@
+<?php
+session_start();
+
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+
+    header('Location: index.php');
+}
+
+//create a key for hash_hmac function
+if (empty($_SESSION['key'])) {
+
+    $_SESSION['key'] = bin2hex(random_bytes(32));
+}
+    
+//create CSRF token
+$csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Furniture Store | Register</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf" content="<?php echo $csrf;?>">
 	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="assets/vendor/owl.carousel/assets/owl.carousel.css"> 
 	<link rel="stylesheet" href="assets/vendor/wow/animate.css"> 
+	
 
 	<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -401,7 +422,7 @@
 			<div class="breadcrumb-content">
 				<h2>register</h2>
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="">register</a></li>
 				</ul>
 			</div>
@@ -422,29 +443,33 @@
 				<div class="col-sm-6 col-lg-6">
 					<div class="login_box">
 					<h3>Create Your Account</h3>
-						<form class="eb-form eb-mailform form-checkout" novalidate="novalidate">
+						<form id="register-form" method="POST" action="javascript:void(0);" class="eb-form eb-mailform form-checkout" novalidate="novalidate">
 							<div class="form-wrap has-error">
-								<input class="form-input form-control" id="checkout-first-name-1" type="text" name="name" data-constraints="@Required" placeholder="First Name">
+								<input class="form-input form-control" id="checkout-first-name-1" type="text" name="ime" data-constraints="@Required" placeholder="First Name">
 							</div>
 							<div class="form-wrap has-error">
-								<input class="form-input form-control" id="checkout-last-name-1" type="text" name="name" data-constraints="@Required" placeholder="Last Name">
+								<input class="form-input form-control" id="checkout-last-name-1" type="text" name="prezime" data-constraints="@Required" placeholder="Last Name">
 							</div>
 							<div class="form-wrap">
 								<input class="form-input form-control" id="checkout-email-1" type="email" name="email" data-constraints="@Email @Required" placeholder="E-Mail">
 							</div>
 							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-city-1" type="text" name="password" data-constraints="@Required" placeholder="Password:">
+								<input class="form-input form-control" id="checkout-city-1" type="password" name="lozinku" data-constraints="@Required" placeholder="Password:">                         
 							</div>
 							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-phone-1" type="password" name="phone" data-constraints="@Numeric" placeholder="Confirm Password:">
+								<input class="form-input form-control" id="checkout-phone-1" type="password" name="potvrda_lozinke" data-constraints="@Numeric" placeholder="Confirm Password:">
 							</div>
+
+							<div class="text-danger">
+							</div>
+
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
 								<label class="custom-control-label register-remember" for="defaultUnchecked">Remember me on this device</label>
                             </div>
-							<button type="submit" class="btn ">Register</button>
+							<button type="submit" name="submit" class="btn ">Register</button>
 							
-							<p class="signInclass"> Already have an account? &nbsp;<a href="login.html">Sign In</a> </p>
+							<p class="signInclass"> Already have an account? &nbsp;<a href="login.php">Sign In</a> </p>
 						
 					</form>
 					</div>
@@ -579,6 +604,7 @@
 <!-- script files -->
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/register.js"></script>
 <!-- script files -->
 </body>
 </html>
