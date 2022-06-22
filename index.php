@@ -5,6 +5,14 @@ error_reporting(E_ALL);
 
 session_start();
 
+$root_folder =  $_SERVER['DOCUMENT_ROOT'];
+$listing = scandir($root_folder);
+
+echo $root_folder  .'<br>';
+
+var_dump($listing);
+
+
 //print_r($_SESSION);
 
 //create a key for hash_hmac function
