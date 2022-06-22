@@ -3,11 +3,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$connect = mysqli_connect("bachataspirit.com", "bachatas_vlada", "bacha19ta10", "bachatas_farm");  
+$servername = "remotemysql.com";
+$username = "WvjsDWGigN";
+$password = "Ekxe7QXTaQ";
+$database = "WvjsDWGigN";
 
-if ($connect) {
-    echo 'konekcija ok';
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
-else {
-    echo 'Greska u konekciji: ' . mysqli_connect_error();
-}
+echo "Connected successfully";
