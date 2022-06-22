@@ -73,8 +73,8 @@ if (!$result1) {
 				
 				<div class="col-lg-4 col-md-12">
 					<ul class="top-header-social header_account">
-						<li><a href="login.html"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
-						<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li>
+						<li><a href="login.php"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
+						<li><a href="register.php"><i class="fa fa-pencil-square-o"></i> Register</a></li>
 					</ul>
 				</div>
 
@@ -240,10 +240,10 @@ if (!$result1) {
 												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="login.html"> Login </a>
+															 <a href="login.php"> Login </a>
 														</li>
 														<li>
-															 <a href="register.html"> Register</a>
+															 <a href="register.php"> Register</a>
 														</li>
 													</ul>
 												</div>
@@ -287,7 +287,7 @@ if (!$result1) {
 
 											<li class="nav-item"><a href="#" class="nav-link">Shop <i class="fa fa-angle-right"></i></a>
 												<ul class="dropdown-menu">
-													<li class="nav-item"><a href="products.html" class="nav-link">Products List</a></li>
+													<li class="nav-item"><a href="products.php" class="nav-link">Products List</a></li>
 
 													<li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
 
@@ -362,7 +362,7 @@ if (!$result1) {
 			<div class="breadcrumb-content">
 				<h2>products</h2>
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="">products</a></li>
 				</ul>
 			</div>
@@ -390,27 +390,34 @@ if (!$result1) {
 						<!-- category -->
 						<div id="category" class="category">
 							<h3 class="wow fadeInDown animated">category</h3>
+
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="category" id="flexRadioDefault4" checked value="all">
+								<label class="form-check-label" for="flexRadioDefault4">
+									All products
+								</label>
+							</div>
 							 
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+								<input class="form-check-input" type="radio" name="category" id="flexRadioDefault1" value="chairs">
 								<label class="form-check-label" for="flexRadioDefault1">
 									Chairs
 								</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+								<input class="form-check-input" type="radio" name="category" id="flexRadioDefault2" value="tables">
 								<label class="form-check-label" for="flexRadioDefault2">
 									Tables
 								</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+								<input class="form-check-input" type="radio" name="category" id="flexRadioDefault3" value="beds">
 								<label class="form-check-label" for="flexRadioDefault3">
 									Beds
 								</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+								<input class="form-check-input" type="radio" name="category" id="flexRadioDefault4" value="sofas">
 								<label class="form-check-label" for="flexRadioDefault4">
 									Sofas
 								</label>
@@ -423,8 +430,8 @@ if (!$result1) {
 						<div id="category_product" class="category_product">
 							<h3 class="wow fadeInDown animated">Select Color </h3>
 
-							<select class="form-select col-sm-12" aria-label="Default select example">
-								<option selected>Select color...</option>
+							<select id="selectColor" name="selectColor" class="form-select col-sm-12" aria-label="Default select example" onchange="this.value">
+								<option value='select' selected>Select color...</option>
 								<?php
 									if(mysqli_num_rows($result1) > 0) {
 
@@ -435,7 +442,7 @@ if (!$result1) {
 											$color = $rows['color'];
 
 							
-											echo '<option value="">'.$color.'</option>';
+											echo '<option value='.$color.'>'.$color.'</option>';
 											
 										}
 									}
@@ -443,91 +450,8 @@ if (!$result1) {
 								?>
 							</select>
 
-							<!--	<div class="">
-									<div class="product-thumb">
-									<div class="image wow fadeInDown animated">
-										<a href=""><img class="wow fadeInDown animated" src="assets/image/products/product-1.jpg" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-										<div class="sale"><span class="">Sale</span></div>
-									</div>
-									<div class="caption ">
-										
-										<div class="rate-and-title">
-											<h4 class="wow fadeInDown animated"><a href="">Natural  Furniture</a></h4>
-											<div class="rating wow fadeInDown animated">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<div class="clear"></div>
-											</div>
-											<p class="price wow fadeInDown animated">
-												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-											</p>
-											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<!-- products category end
-								<div class="">
-									<div class="product-thumb">
-									<div class="image wow fadeInDown animated">
-										<a href=""><img class="wow fadeInDown animated" src="assets/image/products/product-7.jpg" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-										<div class="sale"><span class="">Sale</span></div>
-									</div>
-									<div class="caption ">
-										
-										<div class="rate-and-title">
-											<h4 class="wow fadeInDown animated"><a href="">Natural Agate</a></h4>
-											<div class="rating wow fadeInDown animated">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<div class="clear"></div>
-											</div>
-											<p class="price wow fadeInDown animated">
-												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-											</p>
-											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<!-- products category end
-							<div class="">
-								<div class="product-thumb">
-									<div class="image wow fadeInDown animated">
-										<a href=""><img class="wow fadeInDown animated" src="assets/image/products/product-1.jpg" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-										<div class="sale"><span class="">Sale</span></div>
-									</div>
-									<div class="caption ">
-										
-										<div class="rate-and-title">
-											<h4 class="wow fadeInDown animated"><a href="">Titanium Quartz</a></h4>
-											<div class="rating wow fadeInDown animated">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<div class="clear"></div>
-											</div>
-											<p class="price wow fadeInDown animated">
-												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-											</p>
-											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<!-- products category end
-								-->
+							
+		
 						</div>
 						<!-- products category end-->
 						
@@ -564,12 +488,12 @@ if (!$result1) {
 									<div class="form-group input-group input-group-sm wow fadeInDown pull-right">
 										<label class="input-group-addon" for="input-limit">Show:</label>
 										<div class="select-wrapper">
-											<select id="input-limit" class="form-control" onchange="location = this.value;">
-												<option value="" selected="selected">9</option>
-												<option value="">12</option>
-												<option value="">15</option>
-												<option value="">18</option>
-																				  
+											<select id="input-limit" class="form-control">
+												<option value="6" selected="selected">6</option>
+												<option value="9">9</option>
+												<option value="12">12</option>
+												<option value="15">15</option>
+												<option value="18">18</option>					  
 											</select>
 										</div>
 									</div>
@@ -577,28 +501,18 @@ if (!$result1) {
 							</div>
 							<div class="clear"></div>
 						</div>
-					<!-- product-list-top -->
-			<!--1 -->
-					<div class="pomocni-div"></div>
+						<!-- product-list-top -->
+				
+						<div class="pomocni-div"></div>
 
-					<div class="pagination">
+						<div class="poruka"></div>
+
+						<div class="pagination"></div>
 
 
-					</div>			
+									
+			
 		
-					<!-- products end 
-							
-					 Pagination -->
-					<!--	
-								<div class="pagination-section text-center wow fadeInDown animated">
-									<a href="#" class="prev page-numbers"><i class="fa fa-angle-left"></i></a>
-									<span class="page-numbers current" aria-current="page">1</span>
-									<a href="#" class="page-numbers">2</a>
-									<a href="#" class="page-numbers">3</a>
-									<a href="#" class="page-numbers">4</a>
-									<a href="#" class="page-numbers">5</a>
-									<a href="#" class="next page-numbers"><i class="fa fa-angle-right"></i></a>
-								</div> -->
 						<!-- Pagination End-->
 					</div>	
 				</div>
@@ -613,29 +527,7 @@ if (!$result1) {
 	<footer id="footer" class="footer">
 		<div class="container-fluid">
 			<div class="row">
-			<!-- Newslatter--
-				<div class="footer_newslatter wow fadeInDown animated">
-						<div class="box">
-							<div class="row">
-								<div class="col-sm-3">
-									<strong class="wow fadeInDown animated">sign up for free</strong>
-								</div>
-								<div class="col-sm-4">
-									<p class="wow fadeInDown animated">get your daily furniture, daily lovescope and daily tarot by email</p>
-								</div>
-								<div class="col-sm-5">
-									<form id="newsletter" accept-charset="utf-8">
-										<div class="success wow fadeInDown animated" style="display: none;">Your subscribe request has been sent!</div>
-										<label class="email">
-											<input type="email" placeholder="Enter your email here" class="wow fadeInDown animated">
-										</label>
-										<a href="#" data-type="submit" class="wow fadeInDown animated">subscribe</a>
-									</form>
-								</div>
-							</div>
-						</div>
-				</div>
-			-- Newslatter end-->
+
 			<div class="footer_matter">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="footer_logo_wrapper">
@@ -674,11 +566,11 @@ if (!$result1) {
 					<div class="footer_list_wrapper">
 						<h2 class="wow fadeInDown animated">Quic Menu</h2>
 						   <ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="index.html">About Us</a></li>
-								<li><a href="index.html">Shop</a></li>
-								<li><a href="index.html">Blog</a></li>
-								<li><a href="index.html">Contact</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="index.php">About Us</a></li>
+								<li><a href="index.php">Shop</a></li>
+								<li><a href="index.php">Blog</a></li>
+								<li><a href="index.php">Contact</a></li>
 								
 							</ul>
 					</div>
@@ -725,13 +617,12 @@ if (!$result1) {
 	$(document).ready(function() {
 
 		var stranica = 1;
-
-		$('.previous').attr('disabled', true);
+		var broj_proizvoda = 6;
         
         //INICIJALIZOVANJE OBJEKTA SA FILTERIMA
         var objekat_filteri = {};
 
-		function ucitaj_filtrirane_podatke(stranica, filteri)  
+		function ucitaj_filtrirane_podatke(stranica, broj_proizvoda, filteri)  
         {  
 
             //SLANJE AJAX POZIVA U FAJL ZA GENERISANJE FILTRIRANIH PODATAKA SA PAGINACIJOM
@@ -740,7 +631,7 @@ if (!$result1) {
                 url:"ajax/refresh_products.php",  
                 method:"POST",
                 dataType: 'json',  
-                data:{stranica,filteri},  
+                data:{stranica,broj_proizvoda,filteri},  
 
                 success:function(data){  
                     console.log(data);
@@ -773,31 +664,54 @@ if (!$result1) {
             });  
         }
 
-		ucitaj_filtrirane_podatke(stranica, objekat_filteri);
+		ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
 
 
 		//FUNKCIJA NA KLIK LINKA ZA PAGINACIJU
-		$(document).on('click', '.pagination_link', function(){ 
+		$(document).on('click', '.pagination_link',  function(){ 
 			
-			if (stranica != 1) {
-				$('.previous').attr('disabled', false);
-			}
-			
-			if ($(this).attr('data-name')) {
-
-				var action = $(this).attr('data-name');
-				
-				(action == "previous") ? (stranica--) : (stranica++);
-				
-			}
-			else {
-				//UZIMANJE BROJA STRANICE
-				stranica = $(this).attr('id'); 
-			}
-
+			//UZIMANJE BROJA STRANICE
+			stranica = $(this).attr('id'); 
+		
 			//POZIVANJE FUNKCIJE ZA UCITAVANJE PODATAKA,SETOVANJE STRANICE NA BROJ KLIKNUTOG LINKA I PROSLEDJIVANJE VRSTE I VREDNOSTI FILTERA
-			ucitaj_filtrirane_podatke(stranica, objekat_filteri);  
+			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);  
 		});
+
+		$('#input-limit').on('change', function() {
+
+			broj_proizvoda = this.value;
+			stranica = 1;
+
+			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
+		});
+
+
+		$("input[name='category']").change(function() {
+
+			stranica = 1;
+
+			var category_filter = $("input[name='category']:checked").val();
+
+			objekat_filteri['category'] = category_filter;
+
+			//alert(objekat_filteri);
+
+			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
+		})
+
+		$("#selectColor").on('change', function(){
+
+			stranica = 1;
+
+			var color_filter = $(this).children("option:selected").val();
+
+			objekat_filteri['color'] = color_filter;
+
+			//alert(color_filter);
+
+			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
+		});
+
 
 	})
 </script>
