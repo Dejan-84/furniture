@@ -181,7 +181,7 @@ function unos_korisnika($ime, $prezime, $email, $lozinka) {
         $status = 1;
 		$last_id = mysqli_insert_id($conn);
 
-		$rezultat = mysqli_query($conn, $podaci_korisnik);
+		$rezultat = mysqli_query($conn, $last_id);
 		
 		
         //$message .= 'Uspesno ste se registrovali. ' .$last_id;
@@ -198,66 +198,4 @@ function unos_korisnika($ime, $prezime, $email, $lozinka) {
 	return $response;
 }
 
-function table_refresh() {
-
-	$odgovor = array();
-
-	$html = '';
-
-	$conn = database_connection('localhost', 'root', '', 'furniture');
-
-    //DODATI PROVERU DA LI JE UPIT USPESNO IZVRSEN,ILI NE
-    $query = "SELECT korisnik_id,ime,prezime,email,datum_registracije FROM korisnik ORDER BY korisnik_id DESC";
-
-    $result = mysqli_query($conn, $query);
-
-    if (!$result) {
-
-		$odgovor['message'] = 'Greska u upitu.';
-    }
-	else {
-
-
-		$html .= " <!-- TABLE CONSTRUCTION-->
-					<table>
-						<tr>
-							<th>ID</th>
-							<th>Ime</th>
-							<th>Prezime</th>
-							<th>Email</th>
-							<th>Datum Registracije</th>
-							<th><a id='add-user' class='btn btn-success'>Add New User</a></th>
-						</tr>
-
-						<tbody class='result-wrapper'>";
-
-		while($rows = mysqli_fetch_assoc($result)) {
-		
-			$id = $rows['korisnik_id'];
-			$ime = $rows['ime'];
-			$prezime = $rows['prezime'];
-			$email = $rows['email'];
-			$datum_registracije = $rows['datum_registracije'];
-
-			$html .= "<tr>
-							<td>".$id."</td>
-							<td>".$ime."</td>
-							<td>".$prezime."</td>
-							<td>".$email."</td>
-							<td>".$datum_registracije."</td>
-							<td>
-								<a class='btn btn-info edit-user' data-id = $id>Edit</a>
-								<a id = $id class='btn btn-danger' onclick='confirmation(this.id)'>Delete</a>
-							</td>
-						</tr>";
-		}
-		
-		$html .= "</tbody>
-				</table>";
-
-		$odgovor['html'] = $html;
-	}	
-
-	return $odgovor;
-}
 ?>
