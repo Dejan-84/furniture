@@ -1,5 +1,5 @@
 <?php
-/*
+
 function database_connection(string $servername, string $username, string $password, string $database)
 {
     // Create connection
@@ -13,4 +13,3 @@ function database_connection(string $servername, string $username, string $passw
 
     return $conn;
 }
-*/

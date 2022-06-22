@@ -5,13 +5,10 @@ error_reporting(E_ALL);
 
 session_start();
 
-$root_folder =  $_SERVER['DOCUMENT_ROOT'];
-$listing = scandir($root_folder);
-
-echo $root_folder  .'<br>';
-
-var_dump($listing);
-
+$servername = "remotemysql.com";
+$username = "WvjsDWGigN";
+$password = "Ekxe7QXTaQ";
+$database = "WvjsDWGigN";
 
 //print_r($_SESSION);
 
@@ -28,8 +25,8 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 
 
 require_once 'includes/baza.php'; 
-/*
-$conn = database_connection('localhost', 'root', '', 'furniture');
+
+$conn = database_connection($servername, $username, $password, $database);
 
 //QUERY FOR GETTING ALL PRODUCTS
 $products_query = "SELECT * FROM products";
@@ -39,7 +36,7 @@ $result = mysqli_query($conn,$products_query);
 if (!$result) {
 	die ('Greska u upitu.');
 }
-*/
+
 ?>
 
 <!DOCTYPE html>
@@ -105,6 +102,25 @@ if (!$result) {
 					<ul class="top-header-social header_account">
 						<?php
 
+							//IF USER IS LOGGED IN,HIDE LOGIN AND REGISTER LINK
+							if(!isset($_SESSION['logged_in'])) {
+
+								echo '<li class="nav-item active">
+										<a class="nav-link" href="login.php"><i class="fa fa-sign-in"></i>Login <span>/</span></a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="register.php"><i class="fa fa-pencil-square-o"></i>Register</a>
+									</li>';
+
+							}
+                            //IF USER IS LOGGED IN ,SHOW WELCOME MEASSAGE AND LOGOUT LINK
+							if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+				
+						
+								echo '<span style="color:white;">Welcome ' .$_SESSION['ime'].' ' .$_SESSION['prezime'] ;
+							
+							    echo '&nbsp; <a  style="color:white;" href="logout.php?csrf=' .$csrf. '"><i class="fa fa-sign-out"></i>Logout</a></span>';
+							}
 						?>	
 					
 					</ul>
