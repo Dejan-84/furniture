@@ -4,7 +4,12 @@ if (isset($_POST)) {
 
     require_once '../includes/baza.php'; 
 
-    $conn = database_connection('localhost', 'root', '', 'furniture');
+    $servername = "remotemysql.com";
+    $username = "WvjsDWGigN";
+    $password = "Ekxe7QXTaQ";
+    $database = "WvjsDWGigN";
+
+    $conn = database_connection($servername, $username, $password, $database);
 
     //KREIRANJE PROMENJIVIH ZA BROJ STRANICE I HTML OUTPUT
     $stranica = '';  

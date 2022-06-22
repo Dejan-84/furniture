@@ -76,7 +76,12 @@ function provera_korisnika($email) {
 	$message = '';
 
 	
-	$conn = database_connection('localhost', 'root', '', 'furniture');
+	$servername = "remotemysql.com";
+    $username = "WvjsDWGigN";
+    $password = "Ekxe7QXTaQ";
+    $database = "WvjsDWGigN";
+
+    $conn = database_connection($servername, $username, $password, $database);
 
 	$user_query = "SELECT email FROM korisnik WHERE email = '$email' LIMIT 1";
 	
@@ -112,7 +117,12 @@ function logovanje_korisnika($email,$pass){
 	$message = '';
 
 	
-	$conn = database_connection('localhost', 'root', '', 'furniture');
+	$servername = "remotemysql.com";
+    $username = "WvjsDWGigN";
+    $password = "Ekxe7QXTaQ";
+    $database = "WvjsDWGigN";
+
+    $conn = database_connection($servername, $username, $password, $database);
 
 	$user_query = "SELECT ime,prezime,email,lozinka FROM korisnik WHERE email = '$email' LIMIT 1";
 	
@@ -166,7 +176,12 @@ function unos_korisnika($ime, $prezime, $email, $lozinka) {
 	$status = 1;
 	$message = '';
 
-	$conn = database_connection('localhost', 'root', '', 'furniture');
+	$servername = "remotemysql.com";
+    $username = "WvjsDWGigN";
+    $password = "Ekxe7QXTaQ";
+    $database = "WvjsDWGigN";
+
+    $conn = database_connection($servername, $username, $password, $database);
 	
 	$upit_unos = "INSERT INTO korisnik(ime,prezime,email,lozinka) VALUES('$ime','$prezime','$email','$lozinka')";
 
