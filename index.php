@@ -84,7 +84,7 @@ if (!$result) {
 	<div class="top-header">
 		<div class="container-fluid">
 			<div class="row align-items-center">
-				<div class="col-lg-4 col-md-12">
+				<div class="col-md-4 col-lg-4 col-md-12">
 					<ul class="top-header-contact-info">
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -92,7 +92,7 @@ if (!$result) {
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
 					</div>
-						<div class="col-lg-4 col-md-12">
+						<div class="col-md-4 col-lg-4 col-md-12">
 						<ul class="top-offer-content">
 						    <li>Get Upto 50% Discount Everyday</li>
 						</ul>
@@ -172,6 +172,10 @@ if (!$result) {
 										</li>
 										<li class="panel mobile_menu_li">
 											<a href="about_us.html" class="mar-mobile"></i> about us</a>
+										</li>
+
+										<li class="panel mobile_menu_li">
+											<a href="products.php" class="mar-mobile"></i>Products</a>
 										</li>
 										
 										  	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
@@ -1025,11 +1029,11 @@ if (!$result) {
 						<!--<img src="assets/image/logo/footer_logo.png" alt="footer_logo" class="img-responsive wow fadeInDown animated">-->
 						<h2 class="wow fadeInDown animated">Contact Detail</h2>
 						   <ul>
-								<li><i class="fa fa-map-marker"></i> No.1023 Pellentesque nec erat.</li>
-								<li><i class="fa fa-map-marker"></i> Neque non north India.</li>
-								<li><i class="fa fa-phone"></i> Phone. (123) 456-7890</li>
+								<li><i class="fa fa-map-marker"></i> Borcanskih Zrtava 1914</li>
+								<li><i class="fa fa-map-marker"></i> 11211 Borca,Belgrade,Serbia</li>
+								<li><i class="fa fa-phone"></i> Phone. (069) 606-557</li>
 								<li><i class="fa fa-fax"></i> Fax. (123) 456-7890</li>
-								<li><i class="fa fa-envelope"></i> Email: company@Example.com</li>
+								<li><i class="fa fa-envelope"></i> Email: dekidjurdjev@gmail.com</li>
 								
 							</ul>
 							

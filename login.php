@@ -425,7 +425,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 				<h2>login</h2>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="">login</a></li>
+					<li><a href="login.php">login</a></li>
 				</ul>
 			</div>
 		</div>

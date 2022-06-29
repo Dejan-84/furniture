@@ -433,7 +433,7 @@ if (!$result1) {
 						
 						<!-- category product -->
 						<div id="category_product" class="category_product">
-							<h3 class="wow fadeInDown animated">Select Color </h3>
+							<h3 class="wow fadeInDown animated">All Color </h3>
 
 							<select id="selectColor" name="selectColor" class="form-select col-sm-12" aria-label="Default select example" onchange="this.value">
 								<option value='select' selected>Select color...</option>
@@ -690,16 +690,24 @@ if (!$result1) {
 			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
 		});
 
+		
 
 		$("input[name='category']").change(function() {
 
 			stranica = 1;
-
+			
 			var category_filter = $("input[name='category']:checked").val();
 
-			objekat_filteri['category'] = category_filter;
+			if (category_filter == 'all') {
 
-			//alert(objekat_filteri);
+				delete objekat_filteri['category'];
+
+			}else{
+
+				objekat_filteri['category'] = category_filter;
+			}
+
+			console.log(objekat_filteri);
 
 			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
 		})
@@ -710,9 +718,16 @@ if (!$result1) {
 
 			var color_filter = $(this).children("option:selected").val();
 
-			objekat_filteri['color'] = color_filter;
+			if(color_filter == 'select') {
 
-			//alert(color_filter);
+				delete objekat_filteri['color'];
+
+			}else {
+
+			    objekat_filteri['color'] = color_filter;
+			}
+
+			console.log(objekat_filteri);
 
 			ucitaj_filtrirane_podatke(stranica, broj_proizvoda, objekat_filteri);
 		});
