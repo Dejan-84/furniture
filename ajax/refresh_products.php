@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if (isset($_POST)) {
 
     require_once '../includes/baza.php'; 
@@ -11,6 +14,9 @@ if (isset($_POST)) {
 
     $conn = database_connection($servername, $username, $password, $database);
 
+    //$conn = database_connection('localhost', 'root', '', 'furniture');
+    
+    //var_dump($conn);
     //KREIRANJE PROMENJIVIH ZA BROJ STRANICE I HTML OUTPUT
     $stranica = '';  
     $html = ''; 
@@ -50,40 +56,52 @@ if (isset($_POST)) {
     //QUERY FOR GETTING ALL PRODUCTS
     $products_query = "SELECT * FROM products ";
 
+    if(isset($_POST['filteri'])) {
 
-    //AKO POSTOJI FILTER ZA PRETRAGU PO KATEGORIJI
-    if (isset($_POST['filteri']['category']) && $_POST['filteri']['category'] != 'all') {
-
-        $kategorija = $_POST['filteri']['category'];
-
-        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
-        $products_query .= "WHERE category = '$kategorija' ";
-
+        $filteri = $_POST['filteri'];
+    
+        $broj_filtera = count($filteri);
         
+        if($broj_filtera > 0) {
+    
+            $brojac = 0;
+            
+            $products_query .= "WHERE ";
+            
+            foreach($filteri as $key => $value) {
+            
+                $brojac++;
+            
+                $products_query .= $key . " = " ."'$value'" ." ";
+
+
+                if($brojac < $broj_filtera) {
+                
+                    $products_query .= "AND ";
+                }
+               
+                
+            }
+           
+        }
     }
+    //PRINCIP KODA ZA HANDLE-OVANJE FILTERA - KRAJ
+    
+    
 
-
-    //AKO POSTOJI FILTER ZA PRETRAGU PO BOJI
-    if (isset($_POST['filteri']['color']) && $_POST['filteri']['color'] != 'select') {
-
-        $color = $_POST['filteri']['color'];
-
-
-        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
-        $products_query .= "AND color = '$color' ";
-    } 
-
-
+    
 
     //ZAVRSETAK UPITA ZA DOBIJANJE PODATAKA O PROIZVODIMA
-    $products_query .= "ORDER BY product_id DESC LIMIT $pocni_od, $proizvodi_po_stranici";
+    $products_query .= "ORDER BY product_id DESC LIMIT $pocni_od, $proizvodi_po_stranici ";
+
+  
 
     $result = mysqli_query($conn,$products_query);
 
     if (!$result) {
         die ('Greska u upitu.');
     }
-
+    
     if(mysqli_num_rows($result) > 0) {
 
         while($rows = mysqli_fetch_assoc($result)) {
@@ -141,26 +159,38 @@ if (isset($_POST)) {
     //IZVRSAVANJE UPITA ZA PAGINACIJU
     $pr_query = "SELECT * FROM products ";
 
-    //AKO POSTOJI FILTER ZA PRETRAGU PO KATEGORIJI
-    if (isset($_POST['filteri']['category']) && $_POST['filteri']['category'] != 'all') {
 
-        $kategorija = $_POST['filteri']['category'];
+    if(isset($_POST['filteri'])) {
 
-        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
-        $pr_query .= "WHERE category = '$kategorija' ";
+        $filteri = $_POST['filteri'];
+    
+        $broj_filtera = count($filteri);
+        
+        if($broj_filtera > 0) {
+    
+            $brojac = 0;
+            
+            $pr_query .= "WHERE ";
+            
+            foreach($filteri as $key => $value) {
+            
+                $brojac++;
+            
+                $pr_query .= $key . " = " ."'$value'" ." ";
 
-       
+
+                if($brojac < $broj_filtera) {
+                
+                    $pr_query .= "AND ";
+                }
+               
+                
+            }
+           
+        }
     }
-
-    //AKO POSTOJI FILTER ZA PRETRAGU PO BOJI
-    if (isset($_POST['filteri']['color']) && $_POST['filteri']['color'] != 'select') {
-
-        $color = $_POST['filteri']['color'];
-
-
-        //NASTAVLJANJE UPITA I DODAVANJE USLOVA
-        $pr_query .= "AND color = '$color' ";
-    }
+    //PRINCIP KODA ZA HANDLE-OVANJE FILTERA - KRAJ
+    
 
   
     $result1 = mysqli_query($conn,$pr_query); 

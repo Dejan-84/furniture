@@ -52,8 +52,8 @@
 				
 				<div class="col-lg-4 col-md-12">
 					<ul class="top-header-social header_account">
-						<li><a href="login.html"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
-						<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li>
+						<li><a href="login.php"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
+						<li><a href="register.php"><i class="fa fa-pencil-square-o"></i> Register</a></li>
 					</ul>
 				</div>
 
@@ -405,7 +405,7 @@
 		</div>
 	</div>
 </section>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13703.127443050533!2d76.18368877209709!3d30.83677792993731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1595511253807!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<iframe src="https://maps.google.com/maps?q=borcanskih%20zrtava%201914%2026&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 <div id="content" class="contact_page">
 <!-- Our Services -->
 	<div id="contact">
@@ -426,15 +426,15 @@
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">Phone</p>
-							<div class="link-inline"><a href="#"><i class="fa fa-phone"></i> 1-800-1234-567</a></div>
+							<div class="link-inline"><a href="#"><i class="fa fa-phone"></i> +381 69 606 557</a></div>
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">E-mail</p>
-							<div class="link-inline"><a href="#"><i class="fa fa-envelope-o"></i> info@company.gmail.com</a></div>
+							<div class="link-inline"><a href="#"><i class="fa fa-envelope-o"></i> dekidjurdjev@.gmail.com</a></div>
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">Address</p>
-							<div class="link-inline link-inline-top"><a href="#"><i class="fa fa-map-marker"></i> 6036 Richmond hwy., Alexandria, VA, 2230</a></div>
+							<div class="link-inline link-inline-top"><a href="#"><i class="fa fa-map-marker"></i> Borcanskih Zrtava 1914, 26/11, 11211 Borca</a></div>
 						  </div>
 						</div>
 					</div>
@@ -512,11 +512,11 @@
 						<!--<img src="assets/image/logo/footer_logo.png" alt="footer_logo" class="img-responsive wow fadeInDown animated">-->
 						<h2 class="wow fadeInDown animated">Contact Detail</h2>
 						   <ul>
-								<li><i class="fa fa-map-marker"></i> No.1023 Pellentesque nec erat.</li>
-								<li><i class="fa fa-map-marker"></i> Neque non north India.</li>
-								<li><i class="fa fa-phone"></i> Phone. (123) 456-7890</li>
+								<li><i class="fa fa-map-marker"></i> Borcanskih Zrtava 1914, 26/11</li>
+								<li><i class="fa fa-map-marker"></i> 11211 Borca, Belgrade, Serbia</li>
+								<li><i class="fa fa-phone"></i> Phone. (+381)69 606-557</li>
 								<li><i class="fa fa-fax"></i> Fax. (123) 456-7890</li>
-								<li><i class="fa fa-envelope"></i> Email: company@Example.com</li>
+								<li><i class="fa fa-envelope"></i> Email: dekidjurdjev@gmail.com</li>
 								
 							</ul>
 							
@@ -544,7 +544,7 @@
 					<div class="footer_list_wrapper">
 						<h2 class="wow fadeInDown animated">Quic Menu</h2>
 						   <ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li><a href="index.html">About Us</a></li>
 								<li><a href="index.html">Shop</a></li>
 								<li><a href="index.html">Blog</a></li>
