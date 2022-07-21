@@ -2328,7 +2328,7 @@ breadcrumb CSS
 /* forecast_page */
 #category h3
 {
-    padding: 0 0 15px 0;
+    padding: 15px 0 15px 0 !important;
 }
 #category ul {
     margin-top: 0;

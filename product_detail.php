@@ -4,17 +4,14 @@
 if(isset($_GET['id'])){
 
     require_once 'includes/baza.php';  
+    require_once 'config/db_config.php'; 
 
     $provera = true;
 
     $id = $_GET['id'];
 
-    $servername = "remotemysql.com";
-    $username = "WvjsDWGigN";
-    $password = "Ekxe7QXTaQ";
-    $database = "WvjsDWGigN";
 
-    $conn = database_connection($servername, $username, $password, $database);
+    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
     $query = "SELECT * FROM products WHERE product_id = $id";
 
