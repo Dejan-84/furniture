@@ -69,7 +69,7 @@
 				<div class="row">
 					<div class="furniture-responsive-menu">
 						<div class="logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 						</div>
@@ -78,7 +78,7 @@
 						<div class="others-option align-items-center">
 									<div class="option-item">
 										<div class="cart-btn">
-											<a href="cart.html"><i class="fa fa-shopping-cart"></i><span>1</span></a>
+											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
 										</div>
 									</div>
 
@@ -99,10 +99,10 @@
 									
 									<ul class="accordion" id="accordion-category">
 										<li class="panel mobile_menu_li">
-											<a href="index.html" class="mar-mobile"></i> Home</a>
+											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
 										<li class="panel mobile_menu_li">
-											<a href="about_us.html" class="mar-mobile"></i> about us</a>
+											<a href="about_us.php" class="mar-mobile"></i> about us</a>
 										</li>
 										  	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
@@ -113,11 +113,11 @@
                                                 <h6 class="title">Tables</h6>
                                                   <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -125,11 +125,11 @@
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -137,11 +137,11 @@
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -149,11 +149,11 @@
                                                 <h6 class="title">Best Selling</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -172,19 +172,19 @@
 												<div id="category85" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="services.html">Products List</a>
+															 <a href="services.php">Products List</a>
 														</li>
 														<li>
-															 <a href="cart.html">Cart</a>
+															 <a href="cart.php">Cart</a>
 														</li>
 														<li>
-															 <a href="checkout.html">Checkout</a>
+															 <a href="checkout.php">Checkout</a>
 														</li>
 														<li>
-															 <a href="single-products.html">Products Details</a>
+															 <a href="single-products.php">Products Details</a>
 														</li>
 														<li>
-															 <a href="404.html">404</a>
+															 <a href="404.php">404</a>
 														</li>
 													</ul>
 												</div>
@@ -197,16 +197,16 @@
 												<div id="category86" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="blog.html">Blog Grid</a>
+															 <a href="blog.php">Blog Grid</a>
 														</li>
 														<li>
-															 <a href="blog-left.html">Blog Grid View Left</a>
+															 <a href="blog-left.php">Blog Grid View Left</a>
 														</li>
 														<li>
-															 <a href="blog-right.html">Blog Grid View right</a>
+															 <a href="blog-right.php">Blog Grid View right</a>
 														</li>
 														<li>
-															 <a href="blog-details.html">Blog Details</a>
+															 <a href="blog-details.php">Blog Details</a>
 														</li>
 													</ul>
 												</div>
@@ -219,17 +219,17 @@
 												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="login.html"> Login </a>
+															 <a href="login.php"> Login </a>
 														</li>
 														<li>
-															 <a href="register.html"> Register</a>
+															 <a href="register.php"> Register</a>
 														</li>
 													</ul>
 												</div>
 										</li>
 
 										<li class="panel mobile_menu_li">
-											<a href="contact_us.html" class="mar-mobile"> Contact Us</a>
+											<a href="contact_us.php" class="mar-mobile"> Contact Us</a>
 										</li>
 									</ul>
 							<div class="clear"></div>
@@ -250,15 +250,15 @@
 				<div class="row">
 					<div class="header_menu_wrapper">
 						<nav class="navbar navbar-expand-md navbar-light">
-							<a class="navbar-brand" href="index.html">
+							<a class="navbar-brand" href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 
 							<div class="collapse navbar-collapse mean-menu" style="display: block;">
 								<ul class="navbar-nav">
-									<li class="nav-item"><a href="index.html" class="nav-link ">Home</a></li>
+									<li class="nav-item"><a href="index.php" class="nav-link ">Home</a></li>
 									
-									<li class="nav-item"><a href="about_us.html" class="nav-link">About Us</a></li>
+									<li class="nav-item"><a href="about_us.php" class="nav-link">About Us</a></li>
 
 									
 									
@@ -269,11 +269,11 @@
                                                 <h6 class="title">Tables</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -281,11 +281,11 @@
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -293,11 +293,11 @@
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -305,11 +305,11 @@
                                                 <h6 class="title">Best Selling</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -323,40 +323,40 @@
 
 											<li class="nav-item"><a href="#" class="nav-link">Shop <i class="fa fa-angle-right"></i></a>
 												<ul class="dropdown-menu">
-													<li class="nav-item"><a href="products.html" class="nav-link">Products List</a></li>
+													<li class="nav-item"><a href="products.php" class="nav-link">Products List</a></li>
 
-													<li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
+													<li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
 
-													<li class="nav-item"><a href="checkout.html" class="nav-link">Checkout</a></li>
+													<li class="nav-item"><a href="checkout.php" class="nav-link">Checkout</a></li>
 
-													<li class="nav-item"><a href="single-products.html" class="nav-link">Products Details</a></li>
+													<li class="nav-item"><a href="single-products.php" class="nav-link">Products Details</a></li>
 												</ul>
 											</li>
 
-											<li class="nav-item"><a href="404.html" class="nav-link">404</a></li>
+											<li class="nav-item"><a href="404.php" class="nav-link">404</a></li>
 										</ul>
 									</li>
 
 									<li class="nav-item"><a href="#" class="nav-link">Blog <i class="fa fa-angle-down"></i></a>
 										<ul class="dropdown-menu">
-											<li class="nav-item"><a href="blog.html" class="nav-link">Blog Grid</a></li>
+											<li class="nav-item"><a href="blog.php" class="nav-link">Blog Grid</a></li>
 											
-											<li class="nav-item"><a href="blog-left.html" class="nav-link">Blog Grid View Left</a></li>
+											<li class="nav-item"><a href="blog-left.php" class="nav-link">Blog Grid View Left</a></li>
 											
-											<li class="nav-item"><a href="blog-right.html" class="nav-link">Blog Grid View right</a></li>
+											<li class="nav-item"><a href="blog-right.php" class="nav-link">Blog Grid View right</a></li>
 
-											<li class="nav-item"><a href="blog-details.html" class="nav-link">Blog Details</a></li>
+											<li class="nav-item"><a href="blog-details.php" class="nav-link">Blog Details</a></li>
 										</ul>
 									</li>
 
 
-									<li class="nav-item"><a href="contact_us.html" class="nav-link active">Contact</a></li>
+									<li class="nav-item"><a href="contact_us.php" class="nav-link active">Contact</a></li>
 								</ul>
 
 								<div class="others-option align-items-center">
 									<div class="option-item">
 										<div class="cart-btn">
-											<a href="cart.html"><i class="fa fa-shopping-cart"></i><span>1</span></a>
+											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
 										</div>
 									</div>
 
@@ -367,7 +367,7 @@
 									</div>
 
 									<!--<div class="option-item">
-										<a href="contact_us.html" class="btn"> Appointment</a>
+										<a href="contact_us.php" class="btn"> Appointment</a>
 									</div>-->
 								</div>
 							</div>
@@ -398,8 +398,8 @@
 			<div class="breadcrumb-content">
 				<h2>Contact Us</h2>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="">Contact Us</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="contact_us.php">Contact Us</a></li>
 				</ul>
 			</div>
 		</div>
@@ -542,13 +542,13 @@
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="footer_list_wrapper">
-						<h2 class="wow fadeInDown animated">Quic Menu</h2>
+						<h2 class="wow fadeInDown animated">Quick Menu</h2>
 						   <ul>
 								<li><a href="index.php">Home</a></li>
-								<li><a href="index.html">About Us</a></li>
-								<li><a href="index.html">Shop</a></li>
-								<li><a href="index.html">Blog</a></li>
-								<li><a href="index.html">Contact</a></li>
+								<li><a href="index.php">About Us</a></li>
+								<li><a href="index.php">Shop</a></li>
+								<li><a href="index.php">Blog</a></li>
+								<li><a href="index.php">Contact</a></li>
 								
 							</ul>
 					</div>
@@ -575,7 +575,7 @@
 </footer>
 	<div class="footer_copyright">
 		<div class="container-fluid">
-			<p class="wow fadeInDown animated">© Copyright 2020 by Furniture Store. All right Reserved - Design By <a href="https://www.templatebazaar.in/" target="_blank">Template bazaar</a></p>
+		<p class="wow fadeInDown animated">© Copyright 2022 by Furniture Store. All right Reserved - Design By <a href="https://www.facebook.com/dejan.djurdjev.1/" target="_blank">Dejan Đurđev</a></p>
 		</div>
 	</div>
 

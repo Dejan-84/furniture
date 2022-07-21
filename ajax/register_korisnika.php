@@ -3,6 +3,7 @@
 session_start();
 
 
+
 if (isset($_POST['form'])) {
 
     $validation = true;
@@ -74,18 +75,46 @@ if (isset($_POST['form'])) {
   
 
     if($validation) {
- 
+        
         $lozinka = password_hash($lozinka, PASSWORD_DEFAULT);
+
+        $activation_code = bin2hex(random_bytes(16));
+
+        $activation_code = password_hash($activation_code, PASSWORD_DEFAULT);
+
        
-        $provera_unosa = unos_korisnika($ime, $prezime, $email, $lozinka);
+        $provera_unosa = unos_korisnika($ime, $prezime, $email, $lozinka, $activation_code);
 
         if ($provera_unosa['status'] == 0) {
             $validation = false;
             $message .= $provera_unosa['message'];
         } 
         else {
-            $url = $provera_unosa['redirect_url'];
-            $response['redirect_url'] = $url;
+            $validation = true;
+            $url = $provera_unosa['redirect_url']; 
+        }
+        
+        if ($validation) {
+
+            $naslov_maila = 'Account verification';
+
+            $poruka = '<p style="margin-bottom:60px;">Account verification</p>
+                <p>You have to activate your account, by clicking the link below.</p>
+                <p><a href="http://localhost/furniture/account_confirmation.php?email='.$email.'&code='.$activation_code.'">Account verification</p>
+                ';
+
+            $status_slanja = posalji_mail($naslov_maila, $email, $poruka);
+            
+            if ($status_slanja['status'] == 0) {
+
+                $validation = false;
+                $message .= $status_slanja['message'];
+            }
+            else {
+                $response['redirect_url'] = $url;
+                $message .= 'You have registered successfully. We sent you a verification link on your email.';
+            }
+     
         } 
         
     }

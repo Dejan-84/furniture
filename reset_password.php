@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+//unset($_SESSION['error']);
+
+//print_r($_SESSION);
+
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
 
     header('Location: index.php');
@@ -15,12 +19,14 @@ if (empty($_SESSION['key'])) {
 //create CSRF token
 $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Furniture Store | Register</title>
+	<title>Furniture Store | reset password</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf" content="<?php echo $csrf;?>">
@@ -29,7 +35,6 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="assets/vendor/owl.carousel/assets/owl.carousel.css"> 
 	<link rel="stylesheet" href="assets/vendor/wow/animate.css"> 
-	
 
 	<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -115,33 +120,30 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 						<div class="menu_slid_bg">
 							<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 							
-								<div class="col-sm-12" style="padding:0px;">
+								<div class="col-sm-12" style="padding: 0; width: 250px; right: 15px; ">
 									<h3>Categories</h3>
 									
 									<ul class="accordion" id="accordion-category">
 										<li class="panel mobile_menu_li">
-											<a href="index.php" class=""></i> Home</a>
+											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
 										<li class="panel mobile_menu_li">
-											<a href="about_us.php" class=""></i> about us</a>
+											<a href="about_us.php" class="mar-mobile"></i> about us</a>
 										</li>
-										<li class="panel mobile_menu_li">
-											<a href="#" class="">Catalog</a>
-												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
+										  	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
 												<div id="category84" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-													<li class="nav-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Megamenu">Shop<i class="fa fa-angle-down"></i></a>
-										<ul class="dropdown-menu megamenu megamenu-pdd ">
+										<ul >
 											<li><div class="row">
-                                            <div class="col-menu col-md-3">
+                                              <div class="col-menu col-md-3">
                                                 <h6 class="title">Tables</h6>
-                                                <div class="content">
+                                                  <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -149,11 +151,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -161,11 +163,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -173,24 +175,24 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Best Selling</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
                                         </div><!-- end row -->
-                                    </li></li>
-
-										</ul>
+                                    </li>
+                                </li>
+                              </ul>
+                          </div>
 									</li> 
-												</div>
-										</li>
 										
+										</li>
 										<li class="panel mobile_menu_li">
-											<a href="#" class="">Shop</a>
+											<a href="#" class="mar-mobile">Shop</a>
 												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category85" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
 												<div id="category85" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
@@ -215,7 +217,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 										</li>
 										
 										<li class="panel mobile_menu_li">
-											<a href="#" class="">Blog</a>
+											<a href="#" class="mar-mobile">Blog</a>
 												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category86" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
 												<div id="category86" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
@@ -237,7 +239,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 										</li>
 										
 										<li class="panel mobile_menu_li">
-											<a href="#" class="">my Account</a>
+											<a href="#" class="mar-mobile">my Account</a>
 												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category87" aria-expanded="false">
 												<span class="plus">+</span><span class="minus">-</span></a></span>
 												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
@@ -253,7 +255,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 										</li>
 
 										<li class="panel mobile_menu_li">
-											<a href="contact_us.php" class=""> Contact Us</a>
+											<a href="contact_us.php" class="mar-mobile"> Contact Us</a>
 										</li>
 									</ul>
 							<div class="clear"></div>
@@ -293,11 +295,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Tables</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -305,11 +307,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -317,11 +319,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -329,11 +331,11 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
                                                 <h6 class="title">Best Selling</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="#">Side Table</a></li>
-                                                        <li><a href="#">Dressing Table</a></li>
-                                                        <li><a href="#">Coffee Table</a></li>
-                                                        <li><a href="#">Computer Table</a></li>
-                                                        <li><a href="#">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -420,73 +422,46 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 	<div class="container-fluid">
 		<div class="row">
 			<div class="breadcrumb-content">
-				<h2>register</h2>
+				<h2>Reset password</h2>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="">register</a></li>
+					<li><a href="reset_password.php">reset password</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </section>
-<div id="content" class="cart_page checkout_page register_page">
+<div id="content" class="cart_page checkout_page register_page login_page">
 <!-- cart -->
 	<div id="register" class="cart_section checkout_section register_section">
 		<div class="container-fluid" id="checkout">
 				
 			<div class="row billing_and_payment_option wow fadeInDown   animated">
 				<div class="heading_wrapper wow fadeInDown animated">
-					<h2 class="wow fadeInDown animated">Registration</h2>
+					<h2 class="wow fadeInDown animated">Reset Your Password</h2>
 					<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
 				</div>
 				<!-- Billing Address -->
-				<div class="col-sm-6 col-lg-6">
-					<div class="login_box">
-					<h3>Create Your Account</h3>
-						<form id="register-form" method="POST" action="javascript:void(0);" class="eb-form eb-mailform form-checkout" novalidate="novalidate">
-							<div class="form-wrap has-error">
-								<input class="form-input form-control" id="checkout-first-name-1" type="text" name="ime" data-constraints="@Required" placeholder="First Name">
-							</div>
-							<div class="form-wrap has-error">
-								<input class="form-input form-control" id="checkout-last-name-1" type="text" name="prezime" data-constraints="@Required" placeholder="Last Name">
-							</div>
-							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-email-1" type="email" name="email" data-constraints="@Email @Required" placeholder="E-Mail">
-							</div>
-							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-city-1" type="password" name="lozinku" data-constraints="@Required" placeholder="Password:">                         
-							</div>
-							<div class="form-wrap">
-								<input class="form-input form-control" id="checkout-phone-1" type="password" name="potvrda_lozinke" data-constraints="@Numeric" placeholder="Confirm Password:">
+				<div class="login_box">
+					<h3>Reset Your Password</h3>
+						<form id='submit-form' method="post" action="javascript:void(0);" novalidate="novalidate">
+							<div class="form-group">
+							    <label for="email">Email:</label>
+								<input class="form-input form-control" type="email" name="email" placeholder="E-Mail">
 							</div>
 
 							<div class="text-danger">
 							</div>
 
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-								<label class="custom-control-label register-remember" for="defaultUnchecked">Remember me on this device</label>
-                            </div>
-							<button type="submit" name="submit" class="btn ">Register</button>
+							<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 							
-							<p class="signInclass"> Already have an account? &nbsp;<a href="login.php">Sign In</a> </p>
+							<p class="signInclass"> Dont Have an Account?  &nbsp;<a href="login.php">Sign In</a> </p>
+							<p class="signInclass"> Forgotten Password?  &nbsp;<a href="#">Reset password</a> </p>
 						
-					</form>
-					</div>
+					    </form>
+					<div class="clear"></div>
 				</div>
 				<!-- Delivery Address  -->
-				<div class="col-sm-6 col-lg-6  wow fadeInDown   animated registration">
-					<h3>Benefit of Registration</h3>
-					 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
-					 
-					 <ul>
-						<li><i class="fa fa-check"></i> If you are going to use a passage of Lorem Ipsum</li>
-						<li><i class="fa fa-check"></i> All the Lorem Ipsum generators on the Internet tend</li>
-						<li><i class="fa fa-check"></i> The standard chunk of Lorem Ipsum used since the 1500s</li>
-						<li><i class="fa fa-check"></i> a Latin professor at Hampden-Sydney College in Virginia</li>
-						<li><i class="fa fa-check"></i> It is a long established fact that a reader </li>
-					 </ul>
-				</div>
 			</div>
 			<!-- your shopping cart -->
 		</div>	
@@ -527,7 +502,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 						<!--<img src="assets/image/logo/footer_logo.png" alt="footer_logo" class="img-responsive wow fadeInDown animated">-->
 						<h2 class="wow fadeInDown animated">Contact Detail</h2>
 						   <ul>
-						  		<li><i class="fa fa-map-marker"></i> Borcanskih Zrtava 1914</li>
+						   		<li><i class="fa fa-map-marker"></i> Borcanskih Zrtava 1914</li>
 								<li><i class="fa fa-map-marker"></i> 11211 Borca,Belgrade,Serbia</li>
 								<li><i class="fa fa-phone"></i> Phone. (069) 606-557</li>
 								<li><i class="fa fa-fax"></i> Fax. (123) 456-7890</li>
@@ -557,7 +532,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="footer_list_wrapper">
-						<h2 class="wow fadeInDown animated">Quic Menu</h2>
+						<h2 class="wow fadeInDown animated">Quick Menu</h2>
 						   <ul>
 								<li><a href="index.php">Home</a></li>
 								<li><a href="index.php">About Us</a></li>
@@ -604,7 +579,7 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 <!-- script files -->
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/register.js"></script>
+	<script src="assets/js/login.js"></script>
 <!-- script files -->
 </body>
 </html>

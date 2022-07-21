@@ -1,20 +1,14 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 if (isset($_POST)) {
 
     require_once '../includes/baza.php'; 
+    require_once '../config/db_config.php'; 
 
-    $servername = "remotemysql.com";
-    $username = "WvjsDWGigN";
-    $password = "Ekxe7QXTaQ";
-    $database = "WvjsDWGigN";
-
-    $conn = database_connection($servername, $username, $password, $database);
-
-    //$conn = database_connection('localhost', 'root', '', 'furniture');
+    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
     
     //var_dump($conn);
     //KREIRANJE PROMENJIVIH ZA BROJ STRANICE I HTML OUTPUT
@@ -52,7 +46,6 @@ if (isset($_POST)) {
 
     $sledeca_stranica = $stranica + 1;
 
-
     //QUERY FOR GETTING ALL PRODUCTS
     $products_query = "SELECT * FROM products ";
 
@@ -61,6 +54,7 @@ if (isset($_POST)) {
         $filteri = $_POST['filteri'];
     
         $broj_filtera = count($filteri);
+
         
         if($broj_filtera > 0) {
     
@@ -71,30 +65,48 @@ if (isset($_POST)) {
             foreach($filteri as $key => $value) {
             
                 $brojac++;
-            
-                $products_query .= $key . " = " ."'$value'" ." ";
-
-
-                if($brojac < $broj_filtera) {
+               
                 
+                if($key == 'new_price'){
+
+                    /*
+                    $div = explode(" ", $value);
+
+                    $value1 = $div[0];
+                    $value2 = $div[1];
+                    */
+
+                    $value1 = $value['min_price'];
+                    $value2 = $value['max_price'];
+                
+
+                  // $products_query .= " $key BETWEEN ".$key['min_price']."  AND ".$key['max_price']." " ;
+                  $products_query .= "$key BETWEEN $value1 AND $value2 " ;
+                
+                
+                }else{
+
+                    $products_query .= $key . " = " ."'$value'" ." ";
+                }    
+                   
+                if($brojac < $broj_filtera) {
+                    
                     $products_query .= "AND ";
                 }
-               
                 
             }
            
         }
     }
     //PRINCIP KODA ZA HANDLE-OVANJE FILTERA - KRAJ
-    
-    
-
+  
+  //var_dump($products_query);
     
 
     //ZAVRSETAK UPITA ZA DOBIJANJE PODATAKA O PROIZVODIMA
     $products_query .= "ORDER BY product_id DESC LIMIT $pocni_od, $proizvodi_po_stranici ";
 
-  
+    //echo json_encode($products_query); die();
 
     $result = mysqli_query($conn,$products_query);
 
@@ -175,9 +187,29 @@ if (isset($_POST)) {
             foreach($filteri as $key => $value) {
             
                 $brojac++;
-            
-                $pr_query .= $key . " = " ."'$value'" ." ";
 
+                if($key == 'new_price'){
+
+                    /*
+                    $div = explode(" ", $value);
+
+                    $value1 = $div[0];
+                    $value2 = $div[1];
+                    */
+
+                    $value1 = $value['min_price'];
+                    $value2 = $value['max_price'];
+                
+
+                  // $products_query .= " $key BETWEEN ".$key['min_price']."  AND ".$key['max_price']." " ;
+                  $pr_query .= "$key BETWEEN $value1 AND $value2 " ;
+                
+                
+                }else{
+            
+                 $pr_query .= $key . " = " ."'$value'" ." ";
+                  
+                }
 
                 if($brojac < $broj_filtera) {
                 

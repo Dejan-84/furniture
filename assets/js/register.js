@@ -19,7 +19,8 @@ $(document).ready(function() {
                 console.log(response);
 
                 if(response.status) {
-
+                    
+                    alert(response.message);
                     window.location.href = response.redirect_url;
                 }
                 else{

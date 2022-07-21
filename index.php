@@ -5,13 +5,6 @@ error_reporting(E_ALL);
 
 session_start();
 
-$servername = "remotemysql.com";
-$username = "WvjsDWGigN";
-$password = "Ekxe7QXTaQ";
-$database = "WvjsDWGigN";
-
-//print_r($_SESSION);
-
 //create a key for hash_hmac function
 if (empty($_SESSION['key'])) {
 
@@ -22,11 +15,12 @@ if (empty($_SESSION['key'])) {
 $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 
 
-
-
 require_once 'includes/baza.php'; 
+require_once 'config/db_config.php'; 
 
-$conn = database_connection($servername, $username, $password, $database);
+//$conn = database_connection('localhost', 'root', '', 'furniture');
+
+$conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
 //QUERY FOR GETTING ALL PRODUCTS
 $products_query = "SELECT * FROM products";
@@ -147,7 +141,7 @@ if (!$result) {
 						<div class="others-option align-items-center">
 									<div class="option-item">
 										<div class="cart-btn">
-											<a href="cart.html"><i class="fa fa-shopping-cart"></i><span>1</span></a>
+											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
 										</div>
 									</div>
 
@@ -171,7 +165,7 @@ if (!$result) {
 											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
 										<li class="panel mobile_menu_li">
-											<a href="about_us.html" class="mar-mobile"></i> about us</a>
+											<a href="about_us.php" class="mar-mobile"></i> about us</a>
 										</li>
 
 										<li class="panel mobile_menu_li">
@@ -187,11 +181,11 @@ if (!$result) {
                                                 <h6 class="title">Tables</h6>
                                                   <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -199,11 +193,11 @@ if (!$result) {
                                                 <h6 class="title">Chair</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -211,11 +205,11 @@ if (!$result) {
                                                 <h6 class="title">Wardrobe</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -223,11 +217,11 @@ if (!$result) {
                                                 <h6 class="title">Best Selling</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
-                                                        <li><a href="products.html">Dressing Table</a></li>
-                                                        <li><a href="products.html">Coffee Table</a></li>
-                                                        <li><a href="products.html">Computer Table</a></li>
-                                                        <li><a href="products.html">Office Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
+                                                        <li><a href="products.php">Dressing Table</a></li>
+                                                        <li><a href="products.php">Coffee Table</a></li>
+                                                        <li><a href="products.php">Computer Table</a></li>
+                                                        <li><a href="products.php">Office Table</a></li>
                                                     </ul>
                                                 </div>
                                             </div><!-- end col-3 -->
@@ -246,19 +240,19 @@ if (!$result) {
 												<div id="category85" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="services.html">Products List</a>
+															 <a href="services.php">Products List</a>
 														</li>
 														<li>
-															 <a href="cart.html">Cart</a>
+															 <a href="cart.php">Cart</a>
 														</li>
 														<li>
-															 <a href="checkout.html">Checkout</a>
+															 <a href="checkout.php">Checkout</a>
 														</li>
 														<li>
-															 <a href="single-products.html">Products Details</a>
+															 <a href="single-products.php">Products Details</a>
 														</li>
 														<li>
-															 <a href="404.html">404</a>
+															 <a href="404.php">404</a>
 														</li>
 													</ul>
 												</div>
@@ -271,16 +265,16 @@ if (!$result) {
 												<div id="category86" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
 													<ul>
 														<li>
-															 <a href="blog.html">Blog Grid</a>
+															 <a href="blog.php">Blog Grid</a>
 														</li>
 														<li>
-															 <a href="blog-left.html">Blog Grid View Left</a>
+															 <a href="blog-left.php">Blog Grid View Left</a>
 														</li>
 														<li>
-															 <a href="blog-right.html">Blog Grid View right</a>
+															 <a href="blog-right.php">Blog Grid View right</a>
 														</li>
 														<li>
-															 <a href="blog-details.html">Blog Details</a>
+															 <a href="blog-details.php">Blog Details</a>
 														</li>
 													</ul>
 												</div>
@@ -303,7 +297,7 @@ if (!$result) {
 										</li>
 
 										<li class="panel mobile_menu_li">
-											<a href="contact_us.html" class="mar-mobile"> Contact Us</a>
+											<a href="contact_us.php" class="mar-mobile"> Contact Us</a>
 										</li>
 									</ul>
 							<div class="clear"></div>
@@ -332,7 +326,7 @@ if (!$result) {
 								<ul class="navbar-nav">
 									<li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
 									
-									<li class="nav-item"><a href="about_us.html" class="nav-link">About Us</a></li>
+									<li class="nav-item"><a href="about_us.php" class="nav-link">About Us</a></li>
 
 									<li class="nav-item"><a href="products.php" class="nav-link">Products</a></li>
 
@@ -345,7 +339,7 @@ if (!$result) {
                                                 <h6 class="title">Tables</h6>
                                                 <div class="content">
                                                     <ul class="menu-col">
-                                                        <li><a href="products.html">Side Table</a></li>
+                                                        <li><a href="products.php">Side Table</a></li>
                                                         <li><a href="products.html">Dressing Table</a></li>
                                                         <li><a href="products.html">Coffee Table</a></li>
                                                         <li><a href="products.html">Computer Table</a></li>
@@ -401,38 +395,38 @@ if (!$result) {
 												<ul class="dropdown-menu">
 													<li class="nav-item"><a href="products.php" class="nav-link">Products List</a></li>
 
-													<li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
+													<li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
 
-													<li class="nav-item"><a href="checkout.html" class="nav-link">Checkout</a></li>
+													<li class="nav-item"><a href="checkout.php" class="nav-link">Checkout</a></li>
 
-													<li class="nav-item"><a href="single-products.html" class="nav-link">Products Details</a></li>
+													<li class="nav-item"><a href="single-products.php" class="nav-link">Products Details</a></li>
 												</ul>
 											</li>
 
-											<li class="nav-item"><a href="404.html" class="nav-link">404</a></li>
+											<li class="nav-item"><a href="404.php" class="nav-link">404</a></li>
 										</ul>
 									</li>
 
 									<li class="nav-item"><a href="#" class="nav-link">Blog <i class="fa fa-angle-down"></i></a>
 										<ul class="dropdown-menu">
-											<li class="nav-item"><a href="blog.html" class="nav-link">Blog Grid</a></li>
+											<li class="nav-item"><a href="blog.php" class="nav-link">Blog Grid</a></li>
 											
-											<li class="nav-item"><a href="blog-left.html" class="nav-link">Blog Grid View Left</a></li>
+											<li class="nav-item"><a href="blog-left.php" class="nav-link">Blog Grid View Left</a></li>
 											
-											<li class="nav-item"><a href="blog-right.html" class="nav-link">Blog Grid View right</a></li>
+											<li class="nav-item"><a href="blog-right.php" class="nav-link">Blog Grid View right</a></li>
 
-											<li class="nav-item"><a href="blog-details.html" class="nav-link">Blog Details</a></li>
+											<li class="nav-item"><a href="blog-details.php" class="nav-link">Blog Details</a></li>
 										</ul>
 									</li>
 
 
-									<li class="nav-item"><a href="contact_us.html" class="nav-link">Contact</a></li>
+									<li class="nav-item"><a href="contact_us.php" class="nav-link">Contact</a></li>
 								</ul>
 
 								<div class="others-option align-items-center">
 									<div class="option-item">
 										<div class="cart-btn">
-											<a href="cart.html"><i class="fa fa-shopping-cart"></i><span>1</span></a>
+											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
 										</div>
 									</div>
 
@@ -443,7 +437,7 @@ if (!$result) {
 									</div>
 
 									<!--<div class="option-item">
-										<a href="contact_us.html" class="btn"> Appointment</a>
+										<a href="contact_us.php" class="btn"> Appointment</a>
 									</div>-->
 								</div>
 							</div>
@@ -519,7 +513,7 @@ if (!$result) {
 					<div class="col-sm-12">
 						<div class="product-thumb">
 							<div class="image wow fadeInDown animated">
-								<a href="single-products.html"><img class="wow fadeInDown animated" src="<?php echo $picture_path;?>" alt="Chairs" title="Chairs" width="100%"></a>
+								<a href="single-products.php"><img class="wow fadeInDown animated" src="<?php echo $picture_path;?>" alt="Chairs" title="Chairs" width="100%"></a>
 								
 								<div class="sale"><span class="">Sale</span></div>
 								<div class="button-group">
@@ -533,7 +527,7 @@ if (!$result) {
 							<div class="caption">
 								
 								<div class="rate-and-title">
-									<h4 class="wow fadeInDown animated"><a href="single-products.html"><?php echo $name;?></a></h4>
+									<h4 class="wow fadeInDown animated"><a href="single-products.php"><?php echo $name;?></a></h4>
 									<div class="rating wow fadeInDown animated">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
