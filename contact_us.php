@@ -430,7 +430,7 @@
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">E-mail</p>
-							<div class="link-inline"><a href="#"><i class="fa fa-envelope-o"></i> dekidjurdjev@.gmail.com</a></div>
+							<div class="link-inline"><a href="#"><i class="fa fa-envelope-o"></i> dekidjurdjev@gmail.com</a></div>
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">Address</p>
