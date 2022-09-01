@@ -2023,6 +2023,7 @@ html body .owl-carousel {
 #products.products_section .product-thumb .caption
 {
     text-align: center;
+    
 }
 #products.products_section .product-thumb .caption .rating i
 {
@@ -3514,4 +3515,19 @@ em.required
     background-color: #3385ff !important;
     color: #ffffff !important;
     border-radius: 3px !important;
+}
+
+.verification {
+    height: 100vh;
+}
+
+.footer-custom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.text-strong {
+    font-weight: 600;
 }

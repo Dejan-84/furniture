@@ -125,7 +125,7 @@ if (isset($_POST)) {
             $picture_path = $rows['picture_path'];
 
             
-            $html .= '<div class="col-sm-4">
+            $html .= '<div class="col-sm-4 col-sm-12">
                         <div class="product-thumb">
                             <div class="image wow fadeInDown animated">
                                 <a href=""><img class="wow fadeInDown animated" src="' .$picture_path. '" alt="Kundli Dosha" title="' .$name. '" width="100%"></a>
