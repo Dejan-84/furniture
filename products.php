@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 
 require_once 'includes/baza.php'; 
@@ -72,19 +73,29 @@ if (!$result1) {
 	?>
 
 <!-- breadcrumb -->
+
 <section class="main_breadcrumb">
+
 	<div class="container-fluid">
+	
 		<div class="row">
 			<div class="breadcrumb-content">
 				<h2>products</h2>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="">products</a></li>
+					<li><a href="productrs.php">products</a></li>
 				</ul>
+				
 			</div>
+			
 		</div>
+		
+		
 	</div>
+	
 </section>
+
+
 <div id="content" class="products_page">
 <!-- products -->
 	<div id="products" class="products_section">
@@ -482,8 +493,11 @@ if (!$result1) {
 
 		
 
-
 	})
 </script>
+
+<script src="assets/js/quantity-change.js"></script>
+<script src="assets/js/add-to-cart.js"></script>
+
 </body>
 </html>

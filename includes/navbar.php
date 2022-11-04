@@ -1,3 +1,12 @@
+<?php
+
+error_reporting(0);
+//session_destroy();
+?>
+<head>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="./assets/css/style.css"></script>
+</head>
 <header class="header-area">
 	<!-- Top Header -->
 	<div class="top-header">
@@ -14,6 +23,14 @@
 				<div class="col-md-4 col-lg-4 col-md-12">
 					<ul class="top-header-social header_account">
 						<?php
+							
+							if (isset($_SESSION["shopping_cart"])) {
+
+								$num_of_items = count($_SESSION["shopping_cart"]);
+							}
+							else {
+								$num_of_items = 0;
+							}
 
 							//IF USER IS LOGGED IN,HIDE LOGIN AND REGISTER LINK
 							if(!isset($_SESSION['logged_in'])) {
@@ -34,6 +51,9 @@
 							
 							    echo '&nbsp; <a  style="color:white;" href="logout.php?csrf=' .$csrf. '"><i class="fa fa-sign-out"></i>Logout</a></span>';
 							}
+
+							
+								
 						?>	
 					
 					</ul>
@@ -47,6 +67,7 @@
 <div class="navbar-area">
 		<div class="furniture-responsive-nav">
 			<div class="container-fluid">
+			 
 				<div class="row">
 					<div class="furniture-responsive-menu">
 						<div class="logo">
@@ -56,19 +77,41 @@
 						</div>
 						
 						
-						<div class="others-option align-items-center">
-									<div class="option-item">
-										<div class="cart-btn">
-											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
-										</div>
+						<div class="others-option align-items-center ">
+							<div class="option-item  moja">
+								<div class="cart-button">
+									<div class="cart-btn">
+										
+								               <a href="shoping_cart.php"><i class="fa fa-shopping-cart"></i><span class="items-number"><?php echo $num_of_items; ?></span></a>
+								
+									
 									</div>
+									
+									<div class="cart-dropdown">
+									  
+										<div class="table-responsive hover">
 
-									<div class="option-item">
-										<div class="search-btn-box">
-											<a href="#search"><i class="search-btn fa fa-search"></i></a>
+											<table class="table-bordered">
+											</table>
+
 										</div>
-									</div>
-                             </div>
+								
+									</div>	
+									
+									
+									
+
+								</div>
+							</div>
+
+							<div class="option-item">
+								<div class="search-btn-box">
+									<a href="#search"><i class="search-btn fa fa-search"></i></a>
+								</div>
+							</div>
+                        </div>
+						
+					</div>	
 					<!--mobile Menu  -->
 
 					<div id="mySidenav" class="sidenav">
@@ -136,15 +179,20 @@
 		</div>
 
 		<div class="furniture-nav">
-			<div class="container-fluid">
+		
 				<div class="row">
+					
+
 					<div class="header_menu_wrapper">
+					<div class="container-fluid">
+					
 						<nav class="navbar navbar-expand-md navbar-light">
 							<a class="navbar-brand" href="index.php">
 								<img src="assets/image/logo/logo.png" alt="logo">
 							</a>
 
 							<div class="collapse navbar-collapse mean-menu" style="display: block;">
+								
 								<ul class="navbar-nav">
 									<li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
 									
@@ -156,9 +204,29 @@
 								</ul>
 
 								<div class="others-option align-items-center">
-									<div class="option-item">
-										<div class="cart-btn">
-											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
+									<div class="option-item  moja">
+										<div class="cart-button">
+
+											<div class="cart-btn">
+										
+													<a href="shoping_cart.php"><i class="fa fa-shopping-cart"></i><span class="items-number"><?php echo $num_of_items; ?></span></a>
+												
+												
+											</div>
+											<div class="cart-dropdown">
+										
+												<div class="table-responsive hover">
+
+													<table class="table-bordered"  >
+														
+													</table>
+
+												</div>
+													
+											</div>	
+												
+											
+											
 										</div>
 									</div>
 
@@ -167,14 +235,16 @@
 											<a href="#search"><i class="search-btn fa fa-search"></i></a>
 										</div>
 									</div>
-
+									
 								</div>
+								
 							</div>
 						</nav>
 						<div class="clear"></div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 	<!-- End Navbar Area --> 
@@ -188,5 +258,7 @@
 			<div class="clear"></div>
 		</form>
 </div>	
+<script src="./assets/js/hover_products.js"></script>
+
 </header>
 <!-- Header End -->

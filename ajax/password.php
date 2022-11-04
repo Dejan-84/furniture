@@ -94,15 +94,17 @@ if(isset($_POST['form'])) {
 
         if ($validation) {
 
+            (ENVIRONMENT == 'production') ? $host = 'dejandjurdjev.com' : $host = 'localhost';
+
             $naslov_maila = 'Reset Password';
 
             $poruka = '<p style="margin-bottom:60px;">Reset Password</p>
                         <p>Reset password, by clicking the link below.</p>
-                        <p><a href="http://localhost/furniture/password-change.php?email='.$email.'&code='.$token.'">Reset Password</p>
+                        <p><a href="http://'.$host.'/furniture/password-change.php?email='.$email.'&code='.$token.'">Reset Password</p>
                         ';
 
             $status_slanja = posalji_mail($naslov_maila, $email, $poruka);
-            
+
             if ($status_slanja['status'] == 0) {
 
                 $validation = false;
@@ -111,6 +113,7 @@ if(isset($_POST['form'])) {
             else {
                 $message .= 'We sent you a verification link for password reset on your email.';
             }
+        
         }
     } 
 

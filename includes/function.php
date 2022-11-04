@@ -230,14 +230,14 @@ function posalji_mail(string $naslov, string $email, string $poruka) {
 	//Set this to true if SMTP host requires authentication to send email
 	$mail->SMTPAuth = true;                          
 	//Provide username and password     
-	$mail->Username = 'vladaj13@gmail.com';                 
-	$mail->Password = '127211FBDEF6516BC9758A3313CC42331E83';                           
+	$mail->Username = 'dekidjurdjev@gmail.com';                 
+	$mail->Password = '0DDEB660BB57C24E46EE82321E797F055979';                           
 	//If SMTP requires TLS encryption then set it
 	$mail->SMTPSecure = "tls";                           
 	//Set TCP port to connect to
 	$mail->Port = 2525;                                   
 
-	$mail->From = "vladaj13@gmail.com";
+	$mail->From = "dekidjurdjev@gmail.com";
 	$mail->FromName = "Furniture store";
 
 	$mail->addAddress($email);
@@ -251,6 +251,7 @@ function posalji_mail(string $naslov, string $email, string $poruka) {
 	if ($mail->send()) {
 		$message .= 'Message has been sent successfully';
 	} else  {
+		$message .= 'Mailer Error: ' . $mail->ErrorInfo;
 		$message .= 'Error while sending email.';
 		$status = 0;
 	}
