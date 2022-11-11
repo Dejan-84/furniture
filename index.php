@@ -109,7 +109,7 @@ if (!$result) {
 		<div class="container-fluid">
 			<div class="heading_wrapper wow fadeInDown animated">
 				<h2 class="wow fadeInDown animated">Our Products</h2>
-				<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+				<p class="wow fadeInDown animated">Create inspiring, beautifully appointed rooms. Review our wide selection of stylish furniture for bedroom, dining and living — and get enlightened about modern design.</p>
 			</div>
 			<div class="row">
 				<div id="product" class="owl-carousel owl-theme">
@@ -187,7 +187,7 @@ if (!$result) {
 		<div class="container-fluid">
 			<div class="heading_wrapper wow fadeInDown animated">
 				<h2 class="wow fadeInDown animated">What My Client Says</h2>
-				<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+				<p class="wow fadeInDown animated">See the results of our latest Customer Satisfaction and key customer testimonials on how we build strong working relationships with an understanding of individual need and market knowledge.</p>
 			</div>
 				<div class="row">
 					<div id="testimonial" class="owl-carousel owl-theme">
@@ -245,7 +245,7 @@ if (!$result) {
 		<div class="container-fluid">
 			<div class="heading_wrapper wow fadeInDown animated">
 				<h2 class="wow fadeInDown animated">latest furniture</h2>
-				<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+				<p class="wow fadeInDown animated">Raw materials, weaves and curvaceous design is set to take center stage this season...</p>
 			</div>
 				<div class="row">
 					<div id="blog" class="owl-carousel owl-theme">
@@ -256,7 +256,7 @@ if (!$result) {
 									<div class="image">
 										<a href=""><img src="assets/image/blog/1.jpg" class="wow fadeInDown animated"></a>
 										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
+											<span>01-04-2022<span>
 										</div>
 									</div>
 									<div class="admin_and_comments wow fadeInDown animated">
@@ -276,7 +276,7 @@ if (!$result) {
 									<div class="image">
 										<a href=""><img src="assets/image/blog/3.jpg" class="wow fadeInDown animated"></a>
 										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
+											<span>01-04-2022<span>
 										</div>
 									</div>
 									<div class="admin_and_comments wow fadeInDown animated">
@@ -296,7 +296,7 @@ if (!$result) {
 									<div class="image">
 										<a href=""><img src="assets/image/blog/2.jpg" class="wow fadeInDown animated"></a>
 										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
+											<span>01-04-2022<span>
 										</div>
 									</div>
 									<div class="admin_and_comments wow fadeInDown animated">
@@ -316,7 +316,7 @@ if (!$result) {
 									<div class="image">
 										<a href=""><img src="assets/image/blog/1.jpg" class="wow fadeInDown animated"></a>
 										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
+											<span>01-04-2022<span>
 										</div>
 									</div>
 									<div class="admin_and_comments wow fadeInDown animated">

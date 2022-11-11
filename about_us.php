@@ -69,11 +69,14 @@ $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 				<div class="col-sm-6 pd-0">
 					<div class="about_text wow slideInLeft">
 						<h1>What We Offer</h1>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<p>We're thrilled to have won three awards at the Family Business of the Year Awards 2022.
+
+							It's a real privilege to be recognised alongside some of Serbian's best family businesses. Despite our size, we remain a family business at heart, which
+							means whenever you shop in one of our 3 stores, you'll always be invited to make yourself at home.</p>
 						<ul class="list-marked">
-              <li>Sed egestas urna eget ipsum condimentum</li>
-              <li>Vivamus dapibus massa non orci tincidunt</li>
-              <li>Maecenas lacinia blandit ligula, at tristique mi sagittis sit</li>
+              <li>Standing out from competitors (both online and in store)</li>
+              <li>The customers' need to physically see the product</li>
+              <li>20 year structural guarantee</li>
 
             </ul>
 					<a class="btn button button-sm button-primary button-zakaria" href="#">shop now</a>

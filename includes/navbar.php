@@ -82,7 +82,7 @@ error_reporting(0);
 								<div class="cart-button">
 									<div class="cart-btn">
 										
-								               <a href="shoping_cart.php"><i class="fa fa-shopping-cart"></i><span class="items-number"><?php echo $num_of_items; ?></span></a>
+								        <a href="shoping_cart.php"><i class="fa fa-shopping-cart"></i><span class="items-number"><?php echo $num_of_items; ?></span></a>
 								
 									
 									</div>
@@ -122,6 +122,7 @@ error_reporting(0);
 									<h3>Categories</h3>
 									
 									<ul class="accordion" id="accordion-category">
+
 										<li class="panel mobile_menu_li">
 											<a href="index.php" class="mar-mobile"></i> Home</a>
 										</li>
@@ -135,8 +136,8 @@ error_reporting(0);
 										
 										  	 
 												
-												<div id="category84" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-										<ul>
+										<div id="category84" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
+									<ul>
 									
 									
 								</div>
@@ -145,27 +146,28 @@ error_reporting(0);
 										
 										
 										
-										<li class="panel mobile_menu_li">
-											<a href="#" class="mar-mobile">my Account</a>
-												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category87" aria-expanded="false">
-												<span class="plus">+</span><span class="minus">-</span></a></span>
-												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-													<ul>
-														<li>
-															 <a href="login.php"> Login </a>
-														</li>
-														<li>
-															 <a href="register.php"> Register</a>
-														</li>
-													</ul>
-												</div>
-										</li>
+								<li class="panel mobile_menu_li">
+									<a href="#" class="mar-mobile">my Account</a>
+										<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category87" aria-expanded="false">
+										<span class="plus">+</span><span class="minus">-</span></a></span>
+										<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
+											<ul>
+												<li>
+													<a href="login.php"> Login </a>
+												</li>
+												<li>
+													<a href="register.php"> Register</a>
+												</li>
+											</ul>
+										</div>
+								</li>
 
-										<li class="panel mobile_menu_li">
-											<a href="contact_us.php" class="mar-mobile"> Contact Us</a>
-										</li>
-									</ul>
-									<div class="clear"></div>
+									<li class="panel mobile_menu_li">
+										<a href="contact_us.php" class="mar-mobile"> Contact Us</a>
+									</li>
+								</ul>
+								<div class="clear"></div>
+
 							</div>
 							 
 						</div>
