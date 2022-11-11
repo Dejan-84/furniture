@@ -224,7 +224,7 @@ function posalji_mail(string $naslov, string $email, string $poruka) {
 	$mail = new PHPMailer();
 		
 	//Set PHPMailer to use SMTP.
-	$mail->isSMTP();            
+	//$mail->isSMTP();            
 	//Set SMTP host name                          
 	$mail->Host = 'smtp.elasticemail.com';
 	//Set this to true if SMTP host requires authentication to send email
