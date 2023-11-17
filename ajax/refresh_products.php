@@ -125,7 +125,7 @@ if (isset($_POST)) {
             $picture_path = $rows['picture_path'];
 
             
-            $html .= '<div class="col-sm-4">
+            $html .= '<div class="col-sm-4 col-sm-12">
                         <div class="product-thumb">
                             <div class="image wow fadeInDown animated">
                                 <a href=""><img class="wow fadeInDown animated" src="' .$picture_path. '" alt="Kundli Dosha" title="' .$name. '" width="100%"></a>
@@ -136,8 +136,8 @@ if (isset($_POST)) {
                                 $html .= '<div class="inner">
                                         
                                             <button type="button" title="Quick View" class="button-quickview" data-id="' .$id. '" onclick=""><span>Quick View</span></button>
-                                                <button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
-                                                <button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
+                                                
+                                                
                                             </div>
                                         </div>
                                 </div>';
@@ -157,7 +157,14 @@ if (isset($_POST)) {
                                             <p class="price wow fadeInDown animated">
                                                 <span class="price-old">$' .$old_price. '</span> <span class="price-new">$' .$new_price. '</span>  
                                             </p>
-                                            <button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
+                                            <p>
+                                                <input type="button" value="-" class="qtyminus minus" field="quantity" />
+                                                <input type="text" style="width:30%;text-align:center;"name="quantity" value="1" class="qty" id="quantity-' .$id. '"/>
+                                                <input type="button" value="+" class="qtyplus plus" field="quantity" />
+                                            </p>
+                                            <button type="button" class="btn wow fadeInDown animated add-to-cart" data-id="' .$id. '" data-name="' .$name. '"  data-price="' .$new_price. '" data-picture="' .$picture_path. '" title="Add to Cart">
+                                                <span><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                            </button>
                                         </div>
                                     </div>';
                     $html .= '</div>

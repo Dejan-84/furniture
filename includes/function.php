@@ -24,7 +24,7 @@ function prazna_polja(array $form_inputs) {
 
 			
 
-			$message .= 'Niste uneli ' .$key. "<br>";
+			$message .= 'You did not entered ' .$key. "<br>";
 		}
 	}
 
@@ -51,7 +51,7 @@ function provera_lozinke(string $lozinka, string $potvrdjena_lozinka) {
 	if (!preg_match($pattern, $lozinka)) {
 
 		$status = 0;
-		$message .= 'Lozinka nije dovoljno jaka.';
+		$message .= 'Password is not strong enough.';
 
 		$response['message'] = $message;
 	} 
@@ -61,7 +61,7 @@ function provera_lozinke(string $lozinka, string $potvrdjena_lozinka) {
 		if ($lozinka != $potvrdjena_lozinka) {
 
 			$status = 0;
-			$message .= 'Lozinke se ne podudaraju.';
+			$message .= 'Passwords do not match.';
 
 			$response['message'] = $message;			
 		}
@@ -94,7 +94,7 @@ function provera_korisnika($email) {
 
 		//MYSQLI ERROR FOR TESTING ONLY-REMOVE LATER
 		$status = 0;
-		$message .=  'Greska u upitu';
+		$message .=  'Error query.';
 
 		$response['message'] = $message;
 	}
@@ -102,7 +102,7 @@ function provera_korisnika($email) {
 	if(mysqli_num_rows($result) > 0) {
 
 		$status = 0;
-		$message .= 'Korisnik sa unetom email adresom vec postoji.';
+		$message .= 'User with email already exists.';
 
 		$response['message'] = $message;
 	}    
@@ -131,7 +131,7 @@ function logovanje_korisnika($email,$pass){
 
 		//MYSQLI ERROR FOR TESTING ONLY-REMOVE LATER
 		$status = 0;
-		$message .=  'Greska u upitu';
+		$message .=  'Error query.';
 
 		$response['message'] = $message;
 	}
@@ -144,7 +144,7 @@ function logovanje_korisnika($email,$pass){
 		
 		if (!password_verify($pass, $korisnik_array['lozinka'])) {
 			$status = 0;
-			$message .= 'Pogresan email ili lozinka.';
+			$message .= 'Wrong email or password.';
 			$response['message'] = $message;
 		}
 		else {
@@ -158,7 +158,7 @@ function logovanje_korisnika($email,$pass){
 	}
 	else{
         $status = 0;
-		$message .= 'Pogresan email ili lozinka.';
+		$message .= 'Wrong email or password.';
 
 		$response['message'] = $message;
 	}    
@@ -190,7 +190,7 @@ function unos_korisnika($ime, $prezime, $email, $lozinka, $activation_code) {
 	if(!$rezultat_unos) {
 		
 		$status = 0;
-		$message .=  'Greska u upitu';
+		$message .=  'Error query.';
 	}
 	else {
         $status = 1;
@@ -224,20 +224,20 @@ function posalji_mail(string $naslov, string $email, string $poruka) {
 	$mail = new PHPMailer();
 		
 	//Set PHPMailer to use SMTP.
-	$mail->isSMTP();            
+	//$mail->isSMTP();            
 	//Set SMTP host name                          
 	$mail->Host = 'smtp.elasticemail.com';
 	//Set this to true if SMTP host requires authentication to send email
 	$mail->SMTPAuth = true;                          
 	//Provide username and password     
-	$mail->Username = 'vladaj13@gmail.com';                 
-	$mail->Password = '127211FBDEF6516BC9758A3313CC42331E83';                           
+	$mail->Username = 'dekidjurdjev@gmail.com';                 
+	$mail->Password = '0DDEB660BB57C24E46EE82321E797F055979';                           
 	//If SMTP requires TLS encryption then set it
 	$mail->SMTPSecure = "tls";                           
 	//Set TCP port to connect to
 	$mail->Port = 2525;                                   
 
-	$mail->From = "vladaj13@gmail.com";
+	$mail->From = "dekidjurdjev@gmail.com";
 	$mail->FromName = "Furniture store";
 
 	$mail->addAddress($email);
@@ -251,12 +251,59 @@ function posalji_mail(string $naslov, string $email, string $poruka) {
 	if ($mail->send()) {
 		$message .= 'Message has been sent successfully';
 	} else  {
+		$message .= 'Mailer Error: ' . $mail->ErrorInfo;
 		$message .= 'Error while sending email.';
 		$status = 0;
 	}
 
 	$response['message'] = $message;
 	$response['status'] = $status;
+
+	return $response;
+}
+
+function provera_formata_mejla($email) {
+
+	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function email_check($email) {
+
+	$response = array();
+
+	$status = 1;
+	$message = '';
+
+
+    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+
+	$email_query = "SELECT email FROM korisnik WHERE email = '$email' LIMIT 1";
+	
+	$result_email = mysqli_query($conn,$email_query);
+
+	if(!$result_email) {
+
+		//MYSQLI ERROR FOR TESTING ONLY-REMOVE LATER
+		$status = 0;
+		$message .=  'Error query.';
+	}
+
+	if ($status) {
+
+		if(mysqli_num_rows($result_email) == 0) {
+			
+			$status = 0;
+			$message .= 'There is no user with this email.';
+		}
+	}
+
+	$response['status'] = $status;
+	$response['message'] = $message;
 
 	return $response;
 }

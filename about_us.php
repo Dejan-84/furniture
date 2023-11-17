@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+//require_once 'includes/baza.php'; 
+//require_once 'config/db_config.php';
+
+$csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
+
+//$conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,366 +42,10 @@
 	
 </head>
 <body>
-<header class="header-area">
-	<!-- Top Header -->
-	<div class="top-header">
-		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-lg-4 col-md-12">
-					<ul class="top-header-contact-info">
-							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-						<div class="col-lg-4 col-md-12">
-						<ul class="top-offer-content">
-						    <li>Get Upto 50% Discount Everyday</li>
-						</ul>
-				   </div>
-				
-				<div class="col-lg-4 col-md-12">
-					<ul class="top-header-social header_account">
-						<li><a href="login.php"><i class="fa fa-sign-in"></i> Login <span>/</span></a> </li>
-						<li><a href="register.php"><i class="fa fa-pencil-square-o"></i> Register</a></li>
-					</ul>
-				</div>
+    <?php
+	   require 'includes/navbar.php';
+	?>
 
-			</div>
-		</div>
-	</div>
-	<!-- End Top Header -->
-
-	<!-- Start Navbar Area -->
-	<div class="navbar-area">
-		<div class="furniture-responsive-nav">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="furniture-responsive-menu">
-						<div class="logo">
-							<a href="index.php">
-								<img src="assets/image/logo/logo.png" alt="logo">
-							</a>
-						</div>
-						
-						
-						<div class="others-option align-items-center">
-									<div class="option-item">
-										<div class="cart-btn">
-											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
-										</div>
-									</div>
-
-									<div class="option-item">
-										<div class="search-btn-box">
-											<a href="#search"><i class="search-btn fa fa-search"></i></a>
-										</div>
-									</div>
-                             </div>
-					<!--mobile Menu  -->
-
-					<div id="mySidenav" class="sidenav">
-						<div class="menu_slid_bg">
-							<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-							
-								<div class="col-sm-12" style="padding: 0; width: 250px; right: 15px; ">
-									<h3>Categories</h3>
-									
-									<ul class="accordion" id="accordion-category">
-										<li class="panel mobile_menu_li">
-											<a href="index.php" class="mar-mobile"></i> Home</a>
-										</li>
-										<li class="panel mobile_menu_li">
-											<a href="about_us.php" class="mar-mobile"></i> about us</a>
-										</li>
-										  	 <li class="nav-item panel mobile_menu_li"><a href="#" class="dropdown-toggle mar-mobile" data-toggle="dropdown" data-hover="Megamenu">Catalog</a><span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category84" aria-expanded="false">
-												<span class="plus">+</span><span class="minus">-</span></a></span>
-												<div id="category84" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-										<ul >
-											<li><div class="row">
-                                              <div class="col-menu col-md-3">
-                                                <h6 class="title">Tables</h6>
-                                                  <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Chair</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Wardrobe</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Best Selling</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                        </div><!-- end row -->
-                                    </li>
-                                </li>
-                              </ul>
-                          </div>
-									</li> 
-										
-										</li>
-										<li class="panel mobile_menu_li">
-											<a href="#" class="mar-mobile">Shop</a>
-												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category85" aria-expanded="false">
-												<span class="plus">+</span><span class="minus">-</span></a></span>
-												<div id="category85" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-													<ul>
-														<li>
-															 <a href="services.php">Products List</a>
-														</li>
-														<li>
-															 <a href="cart.php">Cart</a>
-														</li>
-														<li>
-															 <a href="checkout.php">Checkout</a>
-														</li>
-														<li>
-															 <a href="single-products.php">Products Details</a>
-														</li>
-														<li>
-															 <a href="404.php">404</a>
-														</li>
-													</ul>
-												</div>
-										</li>
-										
-										<li class="panel mobile_menu_li">
-											<a href="#" class="mar-mobile">Blog</a>
-												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category86" aria-expanded="false">
-												<span class="plus">+</span><span class="minus">-</span></a></span>
-												<div id="category86" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-													<ul>
-														<li>
-															 <a href="blog.php">Blog Grid</a>
-														</li>
-														<li>
-															 <a href="blog-left.php">Blog Grid View Left</a>
-														</li>
-														<li>
-															 <a href="blog-right.php">Blog Grid View right</a>
-														</li>
-														<li>
-															 <a href="blog-details.php">Blog Details</a>
-														</li>
-													</ul>
-												</div>
-										</li>
-										
-										<li class="panel mobile_menu_li">
-											<a href="#" class="mar-mobile">my Account</a>
-												<span class="head"><a style="" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-category" href="#category87" aria-expanded="false">
-												<span class="plus">+</span><span class="minus">-</span></a></span>
-												<div id="category87" class="panel-collapse collapse" style="clear: both; height: 0px;" aria-expanded="false">
-													<ul>
-														<li>
-															 <a href="login.php"> Login </a>
-														</li>
-														<li>
-															 <a href="register.php"> Register</a>
-														</li>
-													</ul>
-												</div>
-										</li>
-
-										<li class="panel mobile_menu_li">
-											<a href="contact_us.php" class="mar-mobile"> Contact Us</a>
-										</li>
-									</ul>
-							<div class="clear"></div>
-							</div>
-							 
-						</div>
-					</div>
-
-					<span class="menu_open" onclick="openNav()">&#9776; Menu</span>
-					<!-- mobile Menu  end-->
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="furniture-nav">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="header_menu_wrapper">
-						<nav class="navbar navbar-expand-md navbar-light">
-							<a class="navbar-brand" href="index.php">
-								<img src="assets/image/logo/logo.png" alt="logo">
-							</a>
-
-							<div class="collapse navbar-collapse mean-menu" style="display: block;">
-								<ul class="navbar-nav">
-									<li class="nav-item"><a href="index.php" class="nav-link ">Home</a></li>
-									
-									<li class="nav-item"><a href="about_us.php" class="nav-link active">About Us</a></li>
-
-									
-									
-									<li class="nav-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Megamenu">Shop<i class="fa fa-angle-down"></i></a>
-										<ul class="dropdown-menu megamenu megamenu-pdd animated">
-											<li><div class="row">
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Tables</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Chair</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Wardrobe</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-menu col-md-3">
-                                                <h6 class="title">Best Selling</h6>
-                                                <div class="content">
-                                                    <ul class="menu-col">
-                                                        <li><a href="products.php">Side Table</a></li>
-                                                        <li><a href="products.php">Dressing Table</a></li>
-                                                        <li><a href="products.php">Coffee Table</a></li>
-                                                        <li><a href="products.php">Computer Table</a></li>
-                                                        <li><a href="products.php">Office Table</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- end col-3 -->
-                                        </div><!-- end row -->
-                                    </li></li>
-
-										</ul>
-									</li> 
-									<li class="nav-item"><a href="#" class="nav-link">Pages <i class="fa fa-angle-down"></i></a>
-										<ul class="dropdown-menu">
-
-											<li class="nav-item"><a href="#" class="nav-link">Shop <i class="fa fa-angle-right"></i></a>
-												<ul class="dropdown-menu">
-													<li class="nav-item"><a href="products.php" class="nav-link">Products List</a></li>
-
-													<li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
-
-													<li class="nav-item"><a href="checkout.php" class="nav-link">Checkout</a></li>
-
-													<li class="nav-item"><a href="single-products.php" class="nav-link">Products Details</a></li>
-												</ul>
-											</li>
-
-											<li class="nav-item"><a href="404.php" class="nav-link">404</a></li>
-										</ul>
-									</li>
-
-									<li class="nav-item"><a href="#" class="nav-link">Blog <i class="fa fa-angle-down"></i></a>
-										<ul class="dropdown-menu">
-											<li class="nav-item"><a href="blog.php" class="nav-link">Blog Grid</a></li>
-											
-											<li class="nav-item"><a href="blog-left.php" class="nav-link">Blog Grid View Left</a></li>
-											
-											<li class="nav-item"><a href="blog-right.php" class="nav-link">Blog Grid View right</a></li>
-
-											<li class="nav-item"><a href="blog-details.php" class="nav-link">Blog Details</a></li>
-										</ul>
-									</li>
-
-
-									<li class="nav-item"><a href="contact_us.php" class="nav-link">Contact</a></li>
-								</ul>
-
-								<div class="others-option align-items-center">
-									<div class="option-item">
-										<div class="cart-btn">
-											<a href="cart.php"><i class="fa fa-shopping-cart"></i><span>1</span></a>
-										</div>
-									</div>
-
-									<div class="option-item">
-										<div class="search-btn-box">
-											<a href="#search"><i class="search-btn fa fa-search"></i></a>
-										</div>
-									</div>
-
-									<!--<div class="option-item">
-										<a href="contact_us.html" class="btn"> Appointment</a>
-									</div>-->
-								</div>
-							</div>
-						</nav>
-						<div class="clear"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Navbar Area --> 
-<div id="search" class="input-group header">
-	<span class="close">x</span>
-		<form>
-			<input value="" name="search" type="search" placeholder="Search">
-			 <span class="input-group-btn">
-				<button type="button" class="btn"><i class="fa fa-search"></i></button>
-			</span>
-			<div class="clear"></div>
-		</form>
-</div>	
-</header>
-<!-- Header End -->
 <!-- breadcrumb -->
 <section class="main_breadcrumb">
 	<div class="container-fluid">
@@ -414,11 +69,14 @@
 				<div class="col-sm-6 pd-0">
 					<div class="about_text wow slideInLeft">
 						<h1>What We Offer</h1>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<p>We're thrilled to have won three awards at the Family Business of the Year Awards 2022.
+
+							It's a real privilege to be recognised alongside some of Serbian's best family businesses. Despite our size, we remain a family business at heart, which
+							means whenever you shop in one of our 3 stores, you'll always be invited to make yourself at home.</p>
 						<ul class="list-marked">
-              <li>Sed egestas urna eget ipsum condimentum</li>
-              <li>Vivamus dapibus massa non orci tincidunt</li>
-              <li>Maecenas lacinia blandit ligula, at tristique mi sagittis sit</li>
+              <li>Standing out from competitors (both online and in store)</li>
+              <li>The customers' need to physically see the product</li>
+              <li>20 year structural guarantee</li>
 
             </ul>
 					<a class="btn button button-sm button-primary button-zakaria" href="#">shop now</a>
@@ -459,29 +117,7 @@
 	<footer id="footer" class="footer">
 		<div class="container-fluid">
 			<div class="row">
-			<!-- Newslatter--
-				<div class="footer_newslatter wow fadeInDown animated">
-						<div class="box">
-							<div class="row">
-								<div class="col-sm-3">
-									<strong class="wow fadeInDown animated">sign up for free</strong>
-								</div>
-								<div class="col-sm-4">
-									<p class="wow fadeInDown animated">get your daily furniture, daily lovescope and daily tarot by email</p>
-								</div>
-								<div class="col-sm-5">
-									<form id="newsletter" accept-charset="utf-8">
-										<div class="success wow fadeInDown animated" style="display: none;">Your subscribe request has been sent!</div>
-										<label class="email">
-											<input type="email" placeholder="Enter your email here" class="wow fadeInDown animated">
-										</label>
-										<a href="#" data-type="submit" class="wow fadeInDown animated">subscribe</a>
-									</form>
-								</div>
-							</div>
-						</div>
-				</div>
-			-- Newslatter end-->
+
 			<div class="footer_matter">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="footer_logo_wrapper">

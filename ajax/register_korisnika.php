@@ -96,12 +96,14 @@ if (isset($_POST['form'])) {
         
         if ($validation) {
 
+            (ENVIRONMENT == 'production') ? $host = 'dejandjurdjev.com' : $host = 'localhost';
+
             $naslov_maila = 'Account verification';
 
             $poruka = '<p style="margin-bottom:60px;">Account verification</p>
-                <p>You have to activate your account, by clicking the link below.</p>
-                <p><a href="http://localhost/furniture/account_confirmation.php?email='.$email.'&code='.$activation_code.'">Account verification</p>
-                ';
+                        <p>You have to activate your account, by clicking the link below.</p>
+                        <p><a href="http://'.$host.'/furniture/account_verification.php?email='.$email.'&code='.$activation_code.'">Account verification</p>
+                        ';
 
             $status_slanja = posalji_mail($naslov_maila, $email, $poruka);
             
