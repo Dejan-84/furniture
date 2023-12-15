@@ -82,7 +82,7 @@ function provera_korisnika($email) {
 
 
 
-    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+    $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 	//$conn = mysqli_connect('localhost', 'root', '', 'furniture');  
 
@@ -119,7 +119,7 @@ function logovanje_korisnika($email,$pass){
 	$status = 1;
 	$message = '';
 
-	$conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+	$conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 	//$conn = mysqli_connect('localhost', 'root', '', 'furniture');
 
@@ -175,7 +175,7 @@ function unos_korisnika($ime, $prezime, $email, $lozinka, $activation_code) {
 	$status = 1;
 	$message = '';
 
-	$conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+	$conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 	//$conn = mysqli_connect('localhost', 'root', '', 'furniture');
 
@@ -280,7 +280,7 @@ function email_check($email) {
 	$message = '';
 
 
-    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+    $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 	$email_query = "SELECT email FROM korisnik WHERE email = '$email' LIMIT 1";
 	

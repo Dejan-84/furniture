@@ -15,7 +15,7 @@ if(isset($_POST)) {
     $email = $_POST['email'];
 
 
-    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME); 
+    $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); 
 
 	$check_query = "SELECT email,activation_expiry,active FROM korisnik WHERE email = '$email' LIMIT 1";
 	

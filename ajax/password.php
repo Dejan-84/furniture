@@ -63,7 +63,7 @@ if(isset($_POST['form'])) {
 
         $token_expiry = date("Y-m-d", strtotime(" +1 day"));
 
-        $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+        $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 
         $id_query = "SELECT korisnik_id FROM korisnik WHERE email = '$email' LIMIT 1";

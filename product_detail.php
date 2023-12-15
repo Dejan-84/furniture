@@ -11,7 +11,7 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
 
 
-    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+    $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
     $query = "SELECT * FROM products WHERE product_id = $id";
 

@@ -20,7 +20,7 @@ require_once 'config/db_config.php';
 
 //$conn = database_connection('localhost', 'root', '', 'furniture');
 
-$conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 //QUERY FOR GETTING ALL PRODUCTS
 $products_query = "SELECT * FROM products";
