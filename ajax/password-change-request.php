@@ -40,7 +40,7 @@ if (isset($_POST['form'])) {
         require_once '../includes/baza.php';
         require_once '../config/db_config.php';
 
-        $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+        $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
         $check_query = "SELECT korisnik_id,link_expiry,link_used FROM password_reset_links
     

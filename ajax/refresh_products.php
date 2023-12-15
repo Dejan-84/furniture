@@ -8,7 +8,7 @@ if (isset($_POST)) {
     require_once '../includes/baza.php'; 
     require_once '../config/db_config.php'; 
 
-    $conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+    $conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     
     //var_dump($conn);
     //KREIRANJE PROMENJIVIH ZA BROJ STRANICE I HTML OUTPUT
