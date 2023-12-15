@@ -14,7 +14,7 @@ if (empty($_SESSION['key'])) {
 //create CSRF token
 $csrf = hash_hmac('sha256', 'this is some string: index.php', $_SESSION['key']);
 
-$conn = database_connection(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = database_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 //$conn = database_connection('localhost', 'root', '', 'furniture');
 
